@@ -1,0 +1,70 @@
+@font-face {
+    font-family: DestinySymbols360;
+    src: url(/fonts/Destiny_Symbols_360.ttf);
+}
+
+@font-face {
+    font-family: DestinySymbolsPC;
+    src: url(/fonts/Destiny_Symbols_PC.otf);
+}
+
+@font-face {
+    font-family: DestinySymbolsPS4;
+    src: url(/fonts/Destiny_Symbols_PS4.otf);
+}
+
+@font-face {
+    font-family: DestinySymbolsSteam;
+    src: url(/fonts/Destiny_Symbols_Steam.otf);
+}
+
+@font-face {
+    font-family: DestinySymbolsXboxONE;
+    src: url(/fonts/Destiny_Symbols_Xbox_ONE.otf);
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#container,
+#missingContainer {
+    color: white;
+    font: 48px Arial;
+    background: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+#container {
+    color: black;
+    background: white;
+
+}
+
+#container *,
+#missingContainer * {
+    box-sizing: border-box;
+    font-family: inherit;
+    padding: 12px;
+    /*border: 0.5px solid white;*/
+    text-align: center;
+    flex-basis: 2em;
+    transition: all 0.1s linear;
+    border-radius: 12px;
+}
+
+#container *:active,
+#missingContainer *:active {
+    color: white;
+    background: black;
+}
+
+small {
+    font-size: 12px;
+}

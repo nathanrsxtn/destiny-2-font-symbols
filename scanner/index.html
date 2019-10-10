@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Scanner</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <input autocomplete="off" id="start" type="text" value="0xE000">
+    <input autocomplete="off" id="current" type="text" value="" style="display: none;">
+    <input autocomplete="off" id="speedBox" type="text" value="" style="display: none;">
+    <input autocomplete="off" id="end" type="text" value="0xF8FF">
+    <input autocomplete="off" id="loop" type="number" min=0 max=2 value="0">
+    <select id="font">
+        <option value="DestinySymbols360">360</option>
+        <option value="DestinySymbolsPC">PC</option>
+        <option value="DestinySymbolsPS4">PS4</option>
+        <option value="DestinySymbolsSteam">Steam</option>
+        <option value="DestinySymbolsXboxONE">Xbox One</option>
+    </select>
+    <button onclick="startTime=performance.now();window.requestAnimationFrame(checkCharacter);currentCode = parseInt(start.value);heighestCode = parseInt(end.value);current.style.display=speedBox.style.display='inline';start.style.border=end.style.border='none';this.remove();loopMode = parseInt(loop.value);loop.remove();fontFamily = font.value;ctx.font = fontSize + 'px ' + fontFamily; container.style.fontFamily = fontFamily;font.remove()">Scan</button>
+    <div id="container">
+    </div>
+    <div id="missingContainer">
+    </div>
+    <script src="script.js"></script>
+</body></html>

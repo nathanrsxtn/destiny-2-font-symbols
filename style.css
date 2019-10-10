@@ -1,0 +1,156 @@
+@font-face {
+    font-family: Destiny_Symbols_360;
+    src: url(/fonts/Destiny_Symbols_360.ttf);
+}
+
+@font-face {
+    font-family: Destiny_Symbols_PC;
+    src: url(/fonts/Destiny_Symbols_PC.otf);
+}
+
+@font-face {
+    font-family: Destiny_Symbols_PS4;
+    src: url(/fonts/Destiny_Symbols_PS4.otf);
+}
+
+@font-face {
+    font-family: Destiny_Symbols_Steam;
+    src: url(/fonts/Destiny_Symbols_Steam.otf);
+}
+
+@font-face {
+    font-family: Destiny_Symbols_Xbox_ONE;
+    src: url(/fonts/Destiny_Symbols_Xbox_ONE.otf);
+}
+
+[section="360"] {
+    font-family: Destiny_Symbols_360;
+}
+
+[section="PC"] {
+    font-family: Destiny_Symbols_PC;
+}
+
+[section="PS4"] {
+    font-family: Destiny_Symbols_PS4;
+}
+
+[section="Steam"] {
+    font-family: Destiny_Symbols_Steam;
+}
+
+[section="Xbox_ONE"] {
+    font-family: Destiny_Symbols_Xbox_ONE;
+}
+
+html {
+    font-size: 16px;
+    font-family: Arial;
+}
+
+body {
+    padding-top: 5rem;
+    margin: 0.5vmin;
+    background-color: rgb(18, 23, 28);
+    user-select: none;
+}
+
+.fullwidth {
+    width: 95%;
+    margin: 0% 2%;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 0.5vmin;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
+
+.top {
+    align-items: flex-start;
+}
+
+.middle {
+    align-items: center;
+}
+
+.center {
+    justify-content: center;
+}
+
+h1 {
+    font-size: 1rem;
+    font-family: Arial;
+    color: rgba(245, 245, 245, 1);
+    text-align: center;
+}
+
+span {
+    flex-basis: 1.25em;
+    text-align: left;
+    padding: 0.25em;
+    color: rgba(245, 245, 245, 0.5);
+    transition: all 0.25s cubic-bezier(0.69, 0, 0, 1);
+    border-radius: 0.5em;
+    margin: 0.5vmin;
+}
+
+#favorites span {
+    color: #b78c25;
+}
+
+[symbols] span,
+#favorites span {
+    cursor: copy;
+    user-select: text;
+}
+
+[symbols] span::selection,
+#favorites span::selection {
+    background: none;
+    color: #b78c25;
+}
+
+[symbols] span:hover,
+#favorites span:hover {
+    color: #f5f5f5;
+    background: #f5f5f503;
+}
+
+[symbols] span:hover::after,
+#favorites span:hover::after {
+    opacity: 1;
+    padding: 0.5vmin;
+    font-size: 3rem;
+    content: attr(symbol);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    background-color: rgba(18, 23, 28, 0.4);
+}
+
+[symbols] span:active,
+#favorites span:active {
+    background: #f5f5f5;
+    color: #212833;
+}
