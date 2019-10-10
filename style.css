@@ -1,26 +1,26 @@
 @font-face {
     font-family: Destiny_Symbols_360;
-    src: url(/fonts/Destiny_Symbols_360.ttf);
+    src: url(fonts/Destiny_Symbols_360.ttf);
 }
 
 @font-face {
     font-family: Destiny_Symbols_PC;
-    src: url(/fonts/Destiny_Symbols_PC.otf);
+    src: url(fonts/Destiny_Symbols_PC.otf);
 }
 
 @font-face {
     font-family: Destiny_Symbols_PS4;
-    src: url(/fonts/Destiny_Symbols_PS4.otf);
+    src: url(fonts/Destiny_Symbols_PS4.otf);
 }
 
 @font-face {
     font-family: Destiny_Symbols_Steam;
-    src: url(/fonts/Destiny_Symbols_Steam.otf);
+    src: url(fonts/Destiny_Symbols_Steam.otf);
 }
 
 @font-face {
     font-family: Destiny_Symbols_Xbox_ONE;
-    src: url(/fonts/Destiny_Symbols_Xbox_ONE.otf);
+    src: url(fonts/Destiny_Symbols_Xbox_ONE.otf);
 }
 
 [section="360"] {
