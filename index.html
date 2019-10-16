@@ -5,52 +5,17 @@
     <title>Destiny 2 Symbols</title>
     <link href="style.css" type="text/css" rel="stylesheet">
     <meta charset="utf-8">
-
 </head>
 
 <body>
-    <input type="range" class="fullwidth" step="0.5" min=0 max=40 value=16 autocomplete="off" oninput="document.documentElement.style.fontSize = this.value + 'px'">
-    <div class="fullwidth flexbox row wrap middle">
-        <div>
-            <input type="checkbox" name="360" oninput="font[this.name].element.parentElement.style.display = this.checked ? '' : 'none';"><span onclick="this.parentElement.children[0].click()">360</span></div>
-        <div>
-            <input type="checkbox" name="PC" checked oninput="font[this.name].element.parentElement.style.display = this.checked ? '' : 'none';"><span onclick="this.parentElement.children[0].click()">PC</span></div>
-        <div>
-            <input type="checkbox" name="PS4" oninput="font[this.name].element.parentElement.style.display = this.checked ? '' : 'none';"><span onclick="this.parentElement.children[0].click()">PS4</span></div>
-        <div>
-            <input type="checkbox" name="Steam" oninput="font[this.name].element.parentElement.style.display = this.checked ? '' : 'none';"><span onclick="this.parentElement.children[0].click()">Steam</span></div>
-        <div>
-            <input type="checkbox" name="Xbox_ONE" oninput="font[this.name].element.parentElement.style.display = this.checked ? '' : 'none';"><span onclick="this.parentElement.children[0].click()">Xbox ONE</span></div>
+    <div class="fullwidth flexbox row nowrap middle center">
+        <input id="symbolBox" type="search" class="fullwidth" placeholder="Click a symbol to copy, or click multiple symbols to put them here and copy them all">
+        <button id="symbolBoxCopy" class="gold-button">Copy</button>
     </div>
-    <h1>Recently Used</h1>
-    <div id="favorites" class="flexbox row wrap top center">
-    </div>
-    <div class="flexbox row nowrap top">
-        <div class="flexbox column nowrap middle" section="360">
-            <h1>360</h1>
-            <div class="flexbox row wrap top" symbols="360">
-            </div>
-        </div>
-        <div class="flexbox column nowrap middle" section="PC">
-            <h1>PC</h1>
-            <div class="flexbox row wrap top" symbols="PC">
-            </div>
-        </div>
-        <div class="flexbox column nowrap middle" section="PS4">
-            <h1>PS4</h1>
-            <div class="flexbox row wrap top" symbols="PS4">
-            </div>
-        </div>
-        <div class="flexbox column nowrap middle" section="Steam">
-            <h1>Steam</h1>
-            <div class="flexbox row wrap top" symbols="Steam">
-            </div>
-        </div>
-        <div class="flexbox column nowrap middle" section="Xbox_ONE">
-            <h1>Xbox ONE</h1>
-            <div class="flexbox row wrap top" symbols="Xbox_ONE">
-            </div>
-        </div>
+    <div class="fullwidth flexbox row nowrap middle center">
+        <span>-</span>
+        <input type="range" class="fullwidth" step="0.5" min=4 max=56 value=16 autocomplete="off" oninput="document.documentElement.style.fontSize = this.value + 'px'">
+        <span>+</span>
     </div>
     <script src="script.js"></script>
 </body>
