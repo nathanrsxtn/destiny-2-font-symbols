@@ -43,7 +43,10 @@ var font = {
 var symbolBox = document.querySelector("#symbolBox");
 var symbolBoxCopy = document.querySelector("#symbolBoxCopy");
 document.body.onclick = function () {
+    var x = window.scrollX;
+    var y = window.scrollY;
     symbolBox.focus();
+    window.scrollTo(x, y);
 }
 symbolBoxCopy.onclick = function () {
     symbolBox.select();
