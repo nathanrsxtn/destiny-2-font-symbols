@@ -1,4 +1,48 @@
 var font = {
+    new: {
+        name: "New Symbols",
+        symbols: ["&#xE076", "&#xE077", "&#xE078", "&#xE079", "&#xE080", "&#xE081", "&#xE082", "&#xE083", "&#xE084", "&#xE085", "&#xE086", "&#xE087", "&#xE088", "&#xE089", "&#xE090", "&#xE139", "&#xE145", "&#xE146"],
+        nicknames: {
+            "&#xE076": "Stasis Glyph 0",
+            "&#xE077": "Stasis Glyph 1",
+            "&#xE078": "Stasis Glyph 2",
+            "&#xE079": "Stasis Glyph 3",
+            "&#xE080": "Coldsnap Grenade",
+            "&#xE081": "Duskfield Grenade",
+            "&#xE082": "Glacier Grenade",
+            "&#xE083": "Shiver Strike",
+            "&#xE084": "Silence and Squal",
+            "&#xE085": "Winter's Wrath",
+            "&#xE086": "Glacial Quake",
+            "&#xE087": "Withering Blade",
+            "&#xE088": "Penumbral Blast",
+            "&#xE089": "Shatter",
+            "&#xE090": "?",
+            "&#xE139": "Stasis",
+            "&#xE145": "Lost Sector",
+            "&#xE146": "Revive Token"
+        },
+        images: {
+            //"&#xE076": "Stasis Glyph 0",
+            //"&#xE077": "Stasis Glyph 1",
+            //"&#xE078": "Stasis Glyph 2",
+            //"&#xE079": "Stasis Glyph 3",
+            "&#xE080": "https://www.bungie.net/common/destiny2_content/icons/9719b83d85cb5ae264dec180a18193db.png",
+            "&#xE081": "https://www.bungie.net/common/destiny2_content/icons/fe28f5eac70b606d1e38f020a571b008.png",
+            "&#xE082": "https://www.bungie.net/common/destiny2_content/icons/de710f8406e1141e5bcb4ef91b95ef2d.png",
+            "&#xE083": "https://www.bungie.net/common/destiny2_content/icons/6cb2bf8a1d172c2f32b34f5ef643d619.png",
+            "&#xE084": "https://www.bungie.net/common/destiny2_content/icons/ba45f0b060e37d7173d20f0007576393.png",
+            "&#xE085": "https://www.bungie.net/common/destiny2_content/icons/de520704305ca55b0a1345e5a8d5b8f1.png",
+            "&#xE086": "https://www.bungie.net/common/destiny2_content/icons/4b32386f0de377289952fb00416b79d7.png",
+            "&#xE087": "https://www.bungie.net/common/destiny2_content/icons/973fce5e47b64d39576c19a99cfb0120.png",
+            "&#xE088": "https://www.bungie.net/common/destiny2_content/icons/b0d3547dd5c27a6bc69ebd210141233f.png",
+            //"&#xE089": "?",
+            //"&#xE090": "?",
+            "&#xE139": "https://www.bungie.net/img/destiny_content/damage_types/destiny2/stasis-white-96x96.png",
+            "&#xE145": "https://www.bungie.net/common/destiny2_content/icons/6a2761d2475623125d896d1a424a91f9.png",
+            //"&#xE146": "Revive Token"
+        }
+    },
     weapon: {
         name: "Weapon Symbols",
         symbols: ["&#xE099", "&#xE100", "&#xE101", "&#xE102", "&#xE103", "&#xE104", "&#xE105", "&#xE106", "&#xE107", "&#xE108", "&#xE109", "&#xE110", "&#xE111", "&#xE113", "&#xE138", "&#xE150", "&#xE151", "&#xE152", "&#xE153", "&#xE154", "&#xE155"]
@@ -69,6 +113,16 @@ Object.keys(font).forEach(function (key) {
         var character = String.fromCharCode(parseInt(symbol.replace("&#x", ""), 16));
         element.innerHTML = character;
         element.title = symbol + "\n" + "Click to Copy";
+        if (font[key].images && font[key].images[symbol]) {
+            element.style.backgroundImage = "url(" + font[key].images[symbol] + ")"
+            element.style.backgroundPosition = "center"
+            element.style.backgroundSize = "contain"
+            element.style.backgroundRepeat = "no-repeat"
+            element.style.color = "transparent"
+            element.style.filter = "opacity(0.5) brightness(96)"
+        } else if (font[key].nicknames) {
+            element.setAttribute("nickname", font[key].nicknames[symbol]);
+        }
         element.setAttribute("symbol", character);
         element.onclick = function () {
             const selection = window.getSelection();
