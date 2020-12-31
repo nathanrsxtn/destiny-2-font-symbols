@@ -3,21 +3,19 @@
 
 <head>
     <title>Destiny 2 Symbols</title>
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="icon.svg">
     <meta charset="utf-8">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/opentype.js@latest/dist/opentype.min.js"></script>
 </head>
 
 <body>
-    <header class="fullwidth flexbox row nowrap middle center">
-        <input id="symbolBox" type="search" class="fullwidth" placeholder="Click a symbol to copy, or click multiple symbols to put them here and copy them all">
-        <button id="symbolBoxCopy" class="gold-button">Copy</button>
+    <header>
+        <input id="symbolBox" type="search" placeholder="Click a symbol to copy, or click multiple symbols to put them here and copy them all">
+        <button id="symbolBoxCopy" class="gold-button">COPY</button>
     </header>
-    <div class="fullwidth flexbox row nowrap middle center">
-        <span>-</span>
-        <input type="range" class="fullwidth" step="0.5" min=4 max=56 value=16 autocomplete="off" oninput="document.documentElement.style.fontSize = this.value + 'px'">
-        <span>+</span>
-    </div>
-    <script src="script.js"></script>
+    <main id="main"></main>
+    <script defer src="script.js"></script>
 </body>
 
 </html>

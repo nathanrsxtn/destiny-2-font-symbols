@@ -56,7 +56,9 @@ function checkCharacter(speed) {
         element.innerHTML = String.fromCharCode(currentCode) + "<br><small>&amp#" + currentCode + ";</small>" + "<small>U+" + currentCode.toString(16).toUpperCase() + "</small>";
         //element.innerHTML = String.fromCharCode(currentCode);
         if (!charExists) {
-            missingContainer.appendChild(element);
+            if (showEmpty.checked) {
+                missingContainer.appendChild(element);
+            }
         } else {
             container.appendChild(element);
             exists.push({

@@ -1,192 +1,235 @@
+/*Selecting symbolBox shows a white border.*/
+/*Change all em to rem*/
 @font-face {
-    font-family: Destiny_Symbols_PC;
-    src: url(fonts/Destiny_Symbols_PC.otf);
-}
-
-* {
-    font-family: Arial, Destiny_Symbols_PC;
+    font-family: Destiny_Keys;
+    src: url(fonts/Destiny_Keys.otf);
 }
 
 body {
     margin: 0.5vmin;
-    background-color: rgb(18, 23, 28);
+    font-family: Arial, Destiny_Keys;
+    text-transform: uppercase;
     user-select: none;
+    background-color: rgb(18, 23, 28);
 }
 
-.fullwidth {
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+section section {
     width: 100%;
 }
 
-.flexbox {
+section div {
     display: flex;
-    justify-content: space-around;
-    align-content: center;
-}
-
-.row {
     flex-direction: row;
-}
-
-.column {
-    flex-direction: column;
-}
-
-.wrap {
     flex-wrap: wrap;
-}
-
-.nowrap {
-    flex-wrap: nowrap;
-}
-
-.top {
-    align-items: flex-start;
-}
-
-.middle {
-    align-items: center;
-}
-
-.center {
     justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+}
+
+h1 {
+    margin: 0em 1em;
+    font-size: 1rem;
+    text-align: center;
+    color: rgba(245, 245, 245, 0.5);
 }
 
 header {
     position: sticky;
     top: 0vmin;
-    padding-top: 0.5vmin;
+    width: 100%;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
     background: linear-gradient(rgba(18, 23, 28, 1) 50%, rgba(18, 23, 28, 0) 100%);
 }
 
-h1 {
-    font-size: 1rem;
+section {
+    margin: 0rem 0.1rem;
+    border: 2px solid #41403d;
+    border-radius: 0.5rem;
+}
+
+section section {
+    margin: 0;
+    border-color: #41403d80;
+    border-width: 1px;
+    border-radius: 0;
+    border-left-style: hidden;
+    border-right-style: hidden;
+}
+
+section:hover {
+    border-color: #41403d;
+    transition-duration: 0.25s;
+    transition-property: color, background, border;
+    transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
+}
+
+section:hover > h1 {
     color: rgba(245, 245, 245, 1);
-    text-align: center;
+    transition-duration: 0.25s;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
 }
 
-input {
-    margin: 0.5vmin;
-    padding: 12px 24px;
-    font-size: 1rem;
-}
-
-span,
-entity {
-    flex-basis: 1.25em;
-    text-align: left;
+figure {
+    flex-basis: 0.5em;
     padding: 0.25em;
+    border: 1px solid #41403d;
+    border-radius: 0.5em;
+    margin: 0.5vmin;
+    text-align: left;
+    text-align: center;
+    user-select: text;
     color: rgba(245, 245, 245, 0.5);
+    cursor: copy;
     transition-duration: 0.25s;
     transition-property: color, background;
     transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
-    border-radius: 0.5em;
-    margin: 0.5vmin;
 }
 
-entity {
-    cursor: copy;
-    user-select: text;
-    image-rendering: -webkit-optimize-contrast;
+figure:hover {
+    color: var(--color, #f5f5f5);
+    background: var(--background-color, #f5f5f530);
 }
 
-entity[nickname] {
-    text-align: center;
+figure[zero-width] {
+    flex-basis: 1.25em;
+    text-align: left;
 }
 
-/* Switch to be after and in white and gold */
-entity[nickname]::before {
-    content: attr(nickname);
-    display: block;
-    color: rgba(245, 245, 245, 0.5);
+figure[background-glyph]:hover {
+    background: #f5f5f510;
 }
 
-entity:hover {
-    color: #f5f5f5;
-    background: #f5f5f503;
+figure[background-glyph]:hover::before {
+    content: attr(background-glyph);
+    color: var(--background-color);
 }
 
-entity:hover::after {
-    opacity: 1;
-    padding: 0.5vmin;
-    font-size: 3rem;
-    content: attr(symbol);
+figure:hover::after {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    padding: 0.5vmin;
+    content: attr(glyph);
+    font-size: 3rem;
     text-align: center;
+    text-shadow: none;
+    opacity: 1;
     pointer-events: none;
     background: linear-gradient(rgba(18, 23, 28, 0.5) 50%, rgba(18, 23, 28, 0) 100%);
 }
 
-entity:active {
-    background: #f5f5f5;
+figure:active {
     color: #212833;
+    background: #f5f5f5 !important;
 }
 
-entity::selection {
-    background: none;
-    color: #b78c25;
+figure::selection {
+    background: #b78c2580;
+}
+
+header input {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.75rem 1rem;
+    box-sizing: content-box;
+    border: none;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.2);
+    outline: none;
+    font-family: Arial, Destiny_Keys;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    caret-color: #b78c25;
+    color: #f5f5f5;
+    background: transparent;
+    transition: 0.5s;
+}
+
+header input:focus {
+    border-bottom: 1px solid #ffce1f;
+}
+
+header input::selection {
+    background: #b78c25;
 }
 
 button {
-    margin: 0.5vmin;
     position: relative;
     display: inline-flex;
     padding: 12px 24px;
-    cursor: pointer;
-    user-select: none;
-    transition: .25s;
+    margin: 0.5vmin;
+    border: none;
     align-items: center;
     justify-content: center;
+    font-family: Arial, Destiny_Keys;
+    font-size: .925rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    user-select: none;
+    cursor: pointer;
     color: #f5f5f5;
     background: rgba(29, 34, 45, .4);
-    font-size: .925rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-    border: none;
+    transition: .25s;
+}
+
+button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    content: "";
+    border: 1px solid #f5f5f5;
+    transition: .25s;
 }
 
 button:hover {
     background: #1d222d;
-    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .25)
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .25);
 }
 
 button:hover::after {
     top: -5px;
     left: -5px;
     right: -5px;
-    bottom: -5px
-}
-
-button::after {
-    position: absolute;
-    content: "";
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid #f5f5f5;
-    -webkit-transition: .25s;
-    transition: .25s
+    bottom: -5px;
 }
 
 button.gold-button {
     color: #f5f5f5;
-    background: rgba(183, 140, 37, .8)
+    background: rgba(183, 140, 37, .8);
 }
 
 button.gold-button::after {
-    border-color: #ffce1f
+    border-color: #ffce1f;
 }
 
 button.gold-button:hover {
-    background: #b78c25
+    background: #b78c25;
 }
 
 button.gold-button:hover::after {
-    border-color: #f5f5f5
+    border-color: #f5f5f5;
 }
 
 button.gold-button:active {
@@ -195,20 +238,24 @@ button.gold-button:active {
 
 
 ::-webkit-scrollbar {
-    width: 1rem
+    width: 1rem;
 }
 
 ::-webkit-scrollbar-track {
     background: #181c25;
-    box-shadow: inset 0 0 5px #12171c
+    box-shadow: inset 0 0 5px #12171c;
 }
 
 ::-webkit-scrollbar-thumb {
     border: 1px solid #181c25;
     background: #232936;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #272e3d
+    background: #272e3d;
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
 }

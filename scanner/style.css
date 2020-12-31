@@ -1,9 +1,4 @@
 @font-face {
-    font-family: DestinySymbols360;
-    src: url(../fonts/Destiny_Symbols_360.ttf);
-}
-
-@font-face {
     font-family: DestinySymbolsPC;
     src: url(../fonts/Destiny_Symbols_PC.otf);
 }
@@ -14,13 +9,8 @@
 }
 
 @font-face {
-    font-family: DestinySymbolsSteam;
-    src: url(../fonts/Destiny_Symbols_Steam.otf);
-}
-
-@font-face {
-    font-family: DestinySymbolsXboxONE;
-    src: url(../fonts/Destiny_Symbols_Xbox_ONE.otf);
+    font-family: DestinyKeys;
+    src: url(../fonts/Destiny_Keys.otf);
 }
 
 body {
