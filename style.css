@@ -1,51 +1,19 @@
-/*Selecting symbolBox shows a white border.*/
-/*Change all em to rem*/
 @font-face {
     font-family: Destiny_Keys;
     src: url(fonts/Destiny_Keys.otf);
 }
 
 body {
-    margin: 0.5vmin;
+    margin: 0.25rem;
     font-family: Arial, Destiny_Keys;
     text-transform: uppercase;
     user-select: none;
     background-color: rgb(18, 23, 28);
 }
 
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-}
-
-section section {
-    width: 100%;
-}
-
-section div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: flex-start;
-}
-
-h1 {
-    margin: 0em 1em;
-    font-size: 1rem;
-    text-align: center;
-    color: rgba(245, 245, 245, 0.5);
-}
-
 header {
     position: sticky;
-    top: 0vmin;
+    top: 0;
     width: 100%;
     padding-bottom: 1rem;
     display: flex;
@@ -58,6 +26,24 @@ header {
     background: linear-gradient(rgba(18, 23, 28, 1) 50%, rgba(18, 23, 28, 0) 100%);
 }
 
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: calc(100vh - 6.5rem - 2px);
+}
+
+h1 {
+    margin: 0rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    color: rgba(245, 245, 245, 0.5);
+}
+
 section {
     margin: 0rem 0.1rem;
     border: 2px solid #41403d;
@@ -65,12 +51,22 @@ section {
 }
 
 section section {
+    width: 100%;
     margin: 0;
     border-color: #41403d80;
     border-width: 1px;
     border-radius: 0;
     border-left-style: hidden;
     border-right-style: hidden;
+}
+
+section div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
 }
 
 section:hover {
@@ -88,11 +84,12 @@ section:hover > h1 {
 }
 
 figure {
-    flex-basis: 0.5em;
-    padding: 0.25em;
+    display: inline;
+    flex-basis: 0.5rem;
+    padding: 0.15rem;
     border: 1px solid #41403d;
-    border-radius: 0.5em;
-    margin: 0.5vmin;
+    border-radius: 0.5rem;
+    margin: 0.15rem;
     text-align: left;
     text-align: center;
     user-select: text;
@@ -109,7 +106,7 @@ figure:hover {
 }
 
 figure[zero-width] {
-    flex-basis: 1.25em;
+    flex-basis: 1.25rem;
     text-align: left;
 }
 
@@ -127,7 +124,7 @@ figure:hover::after {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 0.5vmin;
+    padding: 0.25rem;
     content: attr(glyph);
     font-size: 3rem;
     text-align: center;
@@ -176,7 +173,6 @@ button {
     position: relative;
     display: inline-flex;
     padding: 12px 24px;
-    margin: 0.5vmin;
     border: none;
     align-items: center;
     justify-content: center;

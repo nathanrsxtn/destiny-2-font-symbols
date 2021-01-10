@@ -34,7 +34,7 @@
 
     class Glyph {
         constructor(unicode, name, color = null, background = null) {
-            this.unicode = unicode;
+            this.unicode = unicode.toString(16).padStart(4, 0).toUpperCase();
             this.glyph = String.fromCharCode(unicode);
             this.name = name;
             this.color = color;
@@ -461,7 +461,7 @@
             new Glyph(0xE051, "Capital Sharp S"),
             new Glyph(0xEEA0, "No-Break Space"),
             new Glyph(0xEEFA, "Tofu"),
-            new Glyph(0xFFFD, "UniFFFD")
+            new Glyph(0xFFFD, "Replacement Character")
         ]
     }
     var symbolBox = document.querySelector("#symbolBox");
@@ -497,9 +497,9 @@
             var element = document.createElement("figure");
             element.innerHTML = entry[1].glyph;
             element.setAttribute("glyph", entry[1].glyph);
-            var tooltipUnicodeLine = `U+${entry[1].unicode.toString(16).toUpperCase()}`;
+            var tooltipUnicodeLine = `U+${entry[1].unicode}`;
             if (entry[1].backgroundGlyph) {
-                tooltipUnicodeLine += ` (U+${entry[1].backgroundGlyph.unicode.toString(16).toUpperCase()} Background)`;
+                tooltipUnicodeLine += ` (U+${entry[1].backgroundGlyph.unicode} Background)`;
                 element.setAttribute("background-glyph", entry[1].backgroundGlyph.glyph);
                 element.style.setProperty('--background-color', entry[1].backgroundGlyph.color);
             } else {
