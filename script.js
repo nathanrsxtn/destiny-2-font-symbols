@@ -10,7 +10,7 @@
         PS_BUTTON: "#444444",
         PS_CROSS: "#749AF4",
         PS_CIRCLE: "#FF6460",
-        PS_SQUARE: "#D77CA3",
+        PS_SQUARE: "#D884B8",
         PS_TRIANGLE: "#80B080",
         PS_TOUCH_FG: "#222222",
         PS_TOUCH_BG: "#606060",
@@ -27,7 +27,8 @@
         PRIMARY: "#FFFFFF",
         SPECIAL: "#7AF48B",
         HEAVY: "#B286FF",
-        EXOTIC: "#CDAD32",
+        EXOTIC: "#CDAE32",
+        EXPERIENCE: "#00CFCF",
         MOD_FG: "#0AF3F3",
         MOD_BG: "#266669"
     });
@@ -192,7 +193,7 @@
             new Glyph(0xE072, "Stagger (Unstoppable)", Colors.MOD_FG, Colors.MOD_BG),
         ],
         "Other": [
-            new Glyph(0xE052, "Light", Colors.EXOTIC),
+            new Glyph(0xE052, "Light", Colors.EXPERIENCE),
             new Glyph(0xE059, "Settings"),
             new Glyph(0xE142, "Headshot")
         ],
