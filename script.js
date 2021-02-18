@@ -27,10 +27,13 @@
         PRIMARY: "#FFFFFF",
         SPECIAL: "#7AF48B",
         HEAVY: "#B286FF",
-        EXOTIC: "#CDAE32",
+        EXOTIC_LABEL: "#B09C4F",
+        LEGENDARY_LABEL: "#644D71",
         EXPERIENCE: "#00CFCF",
         MOD_FG: "#0AF3F3",
-        MOD_BG: "#266669"
+        MOD_BG: "#266669",
+        GILDED_FG: "#F3E8B0",
+        GILDED_BG: "#EDB15E99"
     });
 
     class Glyph {
@@ -136,11 +139,11 @@
                 new Glyph(0xE141, "Environment Hazard / Misadventure")
             ],
             "Unique": [
-                new Glyph(0xE066, "Valkyrie Javelin", Colors.EXOTIC),
-                new Glyph(0xE136, "Scorch Cannon", Colors.EXOTIC),
-                new Glyph(0xE138, "Trace Rifle", Colors.EXOTIC),
-                new Glyph(0xE150, "Skyburner's Oath", Colors.EXOTIC),
-                new Glyph(0xE151, "Lord of Wolves", Colors.EXOTIC)
+                new Glyph(0xE066, "Valkyrie Javelin", Colors.EXOTIC_LABEL),
+                new Glyph(0xE136, "Scorch Cannon", Colors.EXOTIC_LABEL),
+                new Glyph(0xE138, "Trace Rifle", Colors.EXOTIC_LABEL),
+                new Glyph(0xE150, "Skyburner's Oath", Colors.EXOTIC_LABEL),
+                new Glyph(0xE151, "Lord of Wolves", Colors.EXOTIC_LABEL)
             ],
         },
         "Abilities": [
@@ -154,7 +157,8 @@
             new Glyph(0xE089, "Encasement Shatter", Colors.STASIS),
             new Glyph(0xE090, "Crystal Shatter", Colors.STASIS),
             new Glyph(0xE118, "Arc Soul", Colors.ARC),
-            new Glyph(0xE124, "Throwing Knife", Colors.SOLAR)
+            new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
+            new Glyph(0xE091, "Bleak Watcher", Colors.STASIS)
         ],
         "Activities": [
             new Glyph(0xE053, "Small Blocker"),
@@ -164,7 +168,7 @@
             new Glyph(0xE069, "Invasion"),
             new Glyph(0xE075, "Quest", null, Colors.QUEST),
             new Glyph(0xE145, "Lost Sector", null, Colors.QUEST),
-            new Glyph(0xE146, "Revive Token", Colors.EXOTIC)
+            new Glyph(0xE146, "Revive Token", Colors.EXOTIC_LABEL)
         ],
         "Vehicles": [
             new Glyph(0xE130, "Turret"),
@@ -195,7 +199,9 @@
         "Other": [
             new Glyph(0xE052, "Light", Colors.EXPERIENCE),
             new Glyph(0xE059, "Settings"),
-            new Glyph(0xE142, "Headshot")
+            new Glyph(0xE142, "Headshot"),
+            new Glyph(0xE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
+            new Glyph(0xE148, "Cabal Gold", Colors.LEGENDARY_LABEL)
         ],
         "Controller": {
             "Playstation": [
@@ -485,9 +491,11 @@
             document.execCommand('copy');
             selection.removeAllRanges();
             event.target.title = "Copied!";
-            event.target.addEventListener("mouseout", _ => event.target.title = title, {
-                once: true
-            });
+            if (title != event.target.title) {
+                event.target.addEventListener("mouseout", _ => event.target.title = title, {
+                    once: true
+                });
+            }
             symbolBox.value += event.target.getAttribute("glyph");
             symbolBox.focus();
         }
