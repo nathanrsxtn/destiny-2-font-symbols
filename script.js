@@ -56,154 +56,162 @@
     }
 
     const FontGlyphs = {
-        "Supers": {
-            "Titan": {
-                "Sentinel": [
-                    new Glyph(0xE061, "Banner Shield", Colors.VOID),
-                    new Glyph(0xE128, "Sentinel Shield", Colors.VOID)
-                ],
-                "Sunbreaker": [
-                    new Glyph(0xE060, "Burning Maul", Colors.SOLAR),
-                    new Glyph(0xE126, "Hammer of Sol", Colors.SOLAR)
-                ],
-                "Striker": [
-                    new Glyph(0xE058, "Thundercrash", Colors.ARC),
-                    new Glyph(0xE122, "Fists of Havoc", Colors.ARC)
-                ],
-                "Behemoth": [
-                    new Glyph(0xE083, "Shiver Strike", Colors.STASIS)
-                ]
+        "Combat": {
+            "Supers": {
+                "Titan": {
+                    "Sentinel": [
+                        new Glyph(0xE061, "Banner Shield", Colors.VOID),
+                        new Glyph(0xE128, "Sentinel Shield", Colors.VOID)
+                    ],
+                    "Sunbreaker": [
+                        new Glyph(0xE060, "Burning Maul", Colors.SOLAR),
+                        new Glyph(0xE126, "Hammer of Sol", Colors.SOLAR)
+                    ],
+                    "Striker": [
+                        new Glyph(0xE058, "Thundercrash", Colors.ARC),
+                        new Glyph(0xE122, "Fists of Havoc", Colors.ARC)
+                    ],
+                    "Behemoth": [
+                        new Glyph(0xE083, "Shiver Strike", Colors.STASIS)
+                    ]
+                },
+                "Hunter": {
+                    "Nightstalker": [
+                        new Glyph(0xE057, "Spectral Blades", Colors.VOID),
+                        new Glyph(0xE127, "Shadowshot", Colors.VOID)
+                    ],
+                    "Gunslinger": [
+                        new Glyph(0xE062, "Blade Barrage", Colors.SOLAR),
+                        new Glyph(0xE123, "Golden Gun", Colors.SOLAR)
+                    ],
+                    "Arcstrider": [
+                        new Glyph(0xE063, "Whirlwind Guard", Colors.ARC),
+                        new Glyph(0xE121, "Arc Staff", Colors.ARC)
+                    ],
+                    "Revenant": [
+                        new Glyph(0xE084, "Silence and Squall", Colors.STASIS),
+                    ]
+                },
+                "Warlock": {
+                    "Voidwalker": [
+                        new Glyph(0xE064, "Nova Warp", Colors.VOID),
+                        new Glyph(0xE120, "Nova Bomb", Colors.VOID)
+                    ],
+                    "Dawnblade": [
+                        new Glyph(0xE056, "Well of Radiance", Colors.SOLAR),
+                        new Glyph(0xE119, "Daybreak", Colors.SOLAR)
+                    ],
+                    "Stormcaller": [
+                        new Glyph(0xE065, "Chaos Reach", Colors.ARC),
+                        new Glyph(0xE125, "Stormtrance", Colors.ARC)
+                    ],
+                    "Shadebinder": [
+                        new Glyph(0xE085, "Winter's Wrath", Colors.STASIS)
+                    ]
+                }
             },
-            "Hunter": {
-                "Nightstalker": [
-                    new Glyph(0xE057, "Spectral Blades", Colors.VOID),
-                    new Glyph(0xE127, "Shadowshot", Colors.VOID)
+            "Weapons": {
+                "Primary": [
+                    new Glyph(0xE099, "Bow", Colors.PRIMARY),
+                    new Glyph(0xE100, "Auto Rifle", Colors.PRIMARY),
+                    new Glyph(0xE101, "Pulse Rifle", Colors.PRIMARY),
+                    new Glyph(0xE102, "Scout Rifle", Colors.PRIMARY),
+                    new Glyph(0xE103, "Hand Cannon", Colors.PRIMARY),
+                    new Glyph(0xE107, "Submachine Gun", Colors.PRIMARY),
+                    new Glyph(0xE109, "Sidearm", Colors.PRIMARY)
                 ],
-                "Gunslinger": [
-                    new Glyph(0xE062, "Blade Barrage", Colors.SOLAR),
-                    new Glyph(0xE123, "Golden Gun", Colors.SOLAR)
+                "Special": [
+                    new Glyph(0xE104, "Shotgun", Colors.SPECIAL),
+                    new Glyph(0xE105, "Sniper Rifle", Colors.SPECIAL),
+                    new Glyph(0xE106, "Fusion Rifle", Colors.SPECIAL),
+                    new Glyph(0xE155, "Light Grenade Launcher", Colors.SPECIAL)
                 ],
-                "Arcstrider": [
-                    new Glyph(0xE063, "Whirlwind Guard", Colors.ARC),
-                    new Glyph(0xE121, "Arc Staff", Colors.ARC)
+                "Heavy": [
+                    new Glyph(0xE108, "Rocket Launcher", Colors.HEAVY),
+                    new Glyph(0xE113, "Heavy Grenade Launcher", Colors.HEAVY),
+                    new Glyph(0xE152, "Linear Fusion Rifle", Colors.HEAVY),
+                    new Glyph(0xE153, "Sword", Colors.HEAVY),
+                    new Glyph(0xE154, "Machine Gun", Colors.HEAVY)
                 ],
-                "Revenant": [
-                    new Glyph(0xE084, "Silence and Squall", Colors.STASIS),
-                ]
+                "Unique": [
+                    new Glyph(0xE066, "Valkyrie Javelin", Colors.EXOTIC_LABEL),
+                    new Glyph(0xE136, "Scorch Cannon", Colors.EXOTIC_LABEL),
+                    new Glyph(0xE138, "Trace Rifle", Colors.EXOTIC_LABEL),
+                    new Glyph(0xE150, "Skyburner's Oath", Colors.EXOTIC_LABEL),
+                    new Glyph(0xE151, "Lord of Wolves", Colors.EXOTIC_LABEL)
+                ],
+                "Abilities": {
+                    "Normal": [
+                        new Glyph(0xE110, "Melee"),
+                        new Glyph(0xE111, "Grenade"),
+                        new Glyph(0xE112, "Smoke"),
+                        new Glyph(0xE141, "Environment Hazard / Misadventure")
+                    ],
+                    "Charged": [
+                        new Glyph(0xE067, "Throwing Hammer", Colors.SOLAR),
+                        new Glyph(0xE080, "Coldsnap Grenade", Colors.STASIS),
+                        new Glyph(0xE081, "Duskfield Grenade", Colors.STASIS),
+                        new Glyph(0xE082, "Glacier Grenade", Colors.STASIS),
+                        new Glyph(0xE086, "Glacial Quake", Colors.STASIS),
+                        new Glyph(0xE087, "Withering Blade", Colors.STASIS),
+                        new Glyph(0xE088, "Penumbral Blast", Colors.STASIS),
+                        new Glyph(0xE089, "Encasement Shatter", Colors.STASIS),
+                        new Glyph(0xE090, "Crystal Shatter", Colors.STASIS),
+                        new Glyph(0xE118, "Arc Soul", Colors.ARC),
+                        new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
+                        new Glyph(0xE091, "Bleak Watcher", Colors.STASIS)
+                    ]
+                }
             },
-            "Warlock": {
-                "Voidwalker": [
-                    new Glyph(0xE064, "Nova Warp", Colors.VOID),
-                    new Glyph(0xE120, "Nova Bomb", Colors.VOID)
-                ],
-                "Dawnblade": [
-                    new Glyph(0xE056, "Well of Radiance", Colors.SOLAR),
-                    new Glyph(0xE119, "Daybreak", Colors.SOLAR)
-                ],
-                "Stormcaller": [
-                    new Glyph(0xE065, "Chaos Reach", Colors.ARC),
-                    new Glyph(0xE125, "Stormtrance", Colors.ARC)
-                ],
-                "Shadebinder": [
-                    new Glyph(0xE085, "Winter's Wrath", Colors.STASIS)
-                ]
-            },
+            "Vehicles": [
+                new Glyph(0xE130, "Turret"),
+                new Glyph(0xE131, "Pike"),
+                new Glyph(0xE132, "Interceptor"),
+                new Glyph(0xE133, "Sparrow"),
+                new Glyph(0xE134, "Shield Artifact"),
+                new Glyph(0xE135, "Loader Tank"),
+                new Glyph(0xE137, "Drake")
+            ],
+            "": [
+                new Glyph(0xE142, "Headshot")
+            ]
         },
-        "Weapons": {
-            "Primary": [
-                new Glyph(0xE099, "Bow", Colors.PRIMARY),
-                new Glyph(0xE100, "Auto Rifle", Colors.PRIMARY),
-                new Glyph(0xE101, "Pulse Rifle", Colors.PRIMARY),
-                new Glyph(0xE102, "Scout Rifle", Colors.PRIMARY),
-                new Glyph(0xE103, "Hand Cannon", Colors.PRIMARY),
-                new Glyph(0xE107, "Submachine Gun", Colors.PRIMARY),
-                new Glyph(0xE109, "Sidearm", Colors.PRIMARY)
+        "Character": {
+            "Elements": [
+                new Glyph(0xE144, "Void", Colors.VOID),
+                new Glyph(0xE140, "Solar", Colors.SOLAR),
+                new Glyph(0xE143, "Arc", Colors.ARC),
+                new Glyph(0xE139, "Stasis", Colors.STASIS)
             ],
-            "Special": [
-                new Glyph(0xE104, "Shotgun", Colors.SPECIAL),
-                new Glyph(0xE105, "Sniper Rifle", Colors.SPECIAL),
-                new Glyph(0xE106, "Fusion Rifle", Colors.SPECIAL),
-                new Glyph(0xE155, "Light Grenade Launcher", Colors.SPECIAL)
+            "Mods": [
+                new Glyph(0xE070, "Shield-Piercing (Barrier)", Colors.MOD_FG, Colors.MOD_BG),
+                new Glyph(0xE071, "Disruption (Overload)", Colors.MOD_FG, Colors.MOD_BG),
+                new Glyph(0xE072, "Stagger (Unstoppable)", Colors.MOD_FG, Colors.MOD_BG)
             ],
-            "Heavy": [
-                new Glyph(0xE108, "Rocket Launcher", Colors.HEAVY),
-                new Glyph(0xE113, "Heavy Grenade Launcher", Colors.HEAVY),
-                new Glyph(0xE152, "Linear Fusion Rifle", Colors.HEAVY),
-                new Glyph(0xE153, "Sword", Colors.HEAVY),
-                new Glyph(0xE154, "Machine Gun", Colors.HEAVY)
+            "Seals": [
+                new Glyph(0xE076, "Stasis: Glyph 0", Colors.STASIS),
+                new Glyph(0xE077, "Stasis: Glyph 1", Colors.STASIS),
+                new Glyph(0xE078, "Stasis: Glyph 2", Colors.STASIS),
+                new Glyph(0xE079, "Stasis: Glyph 3", Colors.STASIS)
             ],
-            "Abilities": [
-                new Glyph(0xE110, "Melee"),
-                new Glyph(0xE111, "Grenade"),
-                new Glyph(0xE112, "Smoke"),
-                new Glyph(0xE141, "Environment Hazard / Misadventure")
+            "Other": [
+                new Glyph(0xE052, "Light", Colors.EXPERIENCE),
+                new Glyph(0xE059, "Settings"),
+                new Glyph(0xE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
+                new Glyph(0xE148, "Cabal Gold", Colors.LEGENDARY_LABEL)
             ],
-            "Unique": [
-                new Glyph(0xE066, "Valkyrie Javelin", Colors.EXOTIC_LABEL),
-                new Glyph(0xE136, "Scorch Cannon", Colors.EXOTIC_LABEL),
-                new Glyph(0xE138, "Trace Rifle", Colors.EXOTIC_LABEL),
-                new Glyph(0xE150, "Skyburner's Oath", Colors.EXOTIC_LABEL),
-                new Glyph(0xE151, "Lord of Wolves", Colors.EXOTIC_LABEL)
-            ],
+            "Activities": [
+                new Glyph(0xE053, "Small Blocker"),
+                new Glyph(0xE054, "Medium Blocker"),
+                new Glyph(0xE055, "Large Blocker"),
+                new Glyph(0xE068, "Giant Blocker"),
+                new Glyph(0xE069, "Invasion"),
+                new Glyph(0xE075, "Quest", null, Colors.QUEST),
+                new Glyph(0xE145, "Lost Sector", null, Colors.QUEST),
+                new Glyph(0xE146, "Revive Token", Colors.EXOTIC_LABEL)
+            ]
         },
-        "Abilities": [
-            new Glyph(0xE067, "Throwing Hammer", Colors.SOLAR),
-            new Glyph(0xE080, "Coldsnap Grenade", Colors.STASIS),
-            new Glyph(0xE081, "Duskfield Grenade", Colors.STASIS),
-            new Glyph(0xE082, "Glacier Grenade", Colors.STASIS),
-            new Glyph(0xE086, "Glacial Quake", Colors.STASIS),
-            new Glyph(0xE087, "Withering Blade", Colors.STASIS),
-            new Glyph(0xE088, "Penumbral Blast", Colors.STASIS),
-            new Glyph(0xE089, "Encasement Shatter", Colors.STASIS),
-            new Glyph(0xE090, "Crystal Shatter", Colors.STASIS),
-            new Glyph(0xE118, "Arc Soul", Colors.ARC),
-            new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
-            new Glyph(0xE091, "Bleak Watcher", Colors.STASIS)
-        ],
-        "Activities": [
-            new Glyph(0xE053, "Small Blocker"),
-            new Glyph(0xE054, "Medium Blocker"),
-            new Glyph(0xE055, "Large Blocker"),
-            new Glyph(0xE068, "Giant Blocker"),
-            new Glyph(0xE069, "Invasion"),
-            new Glyph(0xE075, "Quest", null, Colors.QUEST),
-            new Glyph(0xE145, "Lost Sector", null, Colors.QUEST),
-            new Glyph(0xE146, "Revive Token", Colors.EXOTIC_LABEL)
-        ],
-        "Vehicles": [
-            new Glyph(0xE130, "Turret"),
-            new Glyph(0xE131, "Pike"),
-            new Glyph(0xE132, "Interceptor"),
-            new Glyph(0xE133, "Sparrow"),
-            new Glyph(0xE134, "Shield Artifact"),
-            new Glyph(0xE135, "Loader Tank"),
-            new Glyph(0xE137, "Drake")
-        ],
-        "Elements": [
-            new Glyph(0xE144, "Void", Colors.VOID),
-            new Glyph(0xE140, "Solar", Colors.SOLAR),
-            new Glyph(0xE143, "Arc", Colors.ARC),
-            new Glyph(0xE139, "Stasis", Colors.STASIS)
-        ],
-        "Seals": [
-            new Glyph(0xE076, "Stasis: Glyph 0", Colors.STASIS),
-            new Glyph(0xE077, "Stasis: Glyph 1", Colors.STASIS),
-            new Glyph(0xE078, "Stasis: Glyph 2", Colors.STASIS),
-            new Glyph(0xE079, "Stasis: Glyph 3", Colors.STASIS)
-        ],
-        "Mods": [
-            new Glyph(0xE070, "Shield-Piercing (Barrier)", Colors.MOD_FG, Colors.MOD_BG),
-            new Glyph(0xE071, "Disruption (Overload)", Colors.MOD_FG, Colors.MOD_BG),
-            new Glyph(0xE072, "Stagger (Unstoppable)", Colors.MOD_FG, Colors.MOD_BG),
-        ],
-        "Other": [
-            new Glyph(0xE052, "Light", Colors.EXPERIENCE),
-            new Glyph(0xE059, "Settings"),
-            new Glyph(0xE142, "Headshot"),
-            new Glyph(0xE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
-            new Glyph(0xE148, "Cabal Gold", Colors.LEGENDARY_LABEL)
-        ],
-        "Controller": {
+        "Controllers": {
             "Playstation": [
                 new Glyph(0xE000, "Playstation Cross Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_CROSS)),
                 new Glyph(0xE001, "Playstation Circle Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_CIRCLE)),
@@ -257,6 +265,22 @@
                 new Glyph(0xE179, "Xbox Back Button", Colors.XBOX_CONTROL),
                 new Glyph(0xE180, "Xbox Start Button", Colors.XBOX_CONTROL),
                 new Glyph(0xE181, "Xbox Left Trigger", Colors.XBOX_CONTROL)
+            ],
+            "Mouse": [
+                new Glyph(0xEECD, "Mouse 1", Colors.MOUSE_FG, new Glyph(0xEEF3, null, Colors.MOUSE_BG)),
+                new Glyph(0xEECE, "Mouse 2", Colors.MOUSE_FG, new Glyph(0xEEF4, null, Colors.MOUSE_BG)),
+                new Glyph(0xEECF, "Mouse 3", Colors.MOUSE_FG, new Glyph(0xEEF5, null, Colors.MOUSE_BG)),
+                new Glyph(0xEED0, "Mouse 4", Colors.MOUSE_FG, new Glyph(0xEEF6, null, Colors.MOUSE_BG)),
+                new Glyph(0xEED1, "Mouse 5", Colors.MOUSE_FG, new Glyph(0xEEF7, null, Colors.MOUSE_BG)),
+                new Glyph(0xEED2, "Mouse Wheel Up", Colors.MOUSE_FG, new Glyph(0xEEF8, null, Colors.MOUSE_BG)),
+                new Glyph(0xEED3, "Mouse Wheel Down", Colors.MOUSE_FG, new Glyph(0xEEF9, null, Colors.MOUSE_BG)),
+                new Glyph(0xEEF3, "Mouse Button 1", Colors.MOUSE_BG),
+                new Glyph(0xEEF4, "Mouse Button 2", Colors.MOUSE_BG),
+                new Glyph(0xEEF5, "Mouse Button 3", Colors.MOUSE_BG),
+                new Glyph(0xEEF6, "Mouse Button 4", Colors.MOUSE_BG),
+                new Glyph(0xEEF7, "Mouse Button 5", Colors.MOUSE_BG),
+                new Glyph(0xEEF8, "Mouse Wheel Up Button", Colors.MOUSE_BG),
+                new Glyph(0xEEF9, "Mouse Wheel Down Button", Colors.MOUSE_BG)
             ]
         },
         "Keyboard": {
@@ -442,22 +466,6 @@
                 new Glyph(0xEEF1, "Key Large Background", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG))
             ]
         },
-        "Mouse": [
-            new Glyph(0xEECD, "Mouse 1", Colors.MOUSE_FG, new Glyph(0xEEF3, null, Colors.MOUSE_BG)),
-            new Glyph(0xEECE, "Mouse 2", Colors.MOUSE_FG, new Glyph(0xEEF4, null, Colors.MOUSE_BG)),
-            new Glyph(0xEECF, "Mouse 3", Colors.MOUSE_FG, new Glyph(0xEEF5, null, Colors.MOUSE_BG)),
-            new Glyph(0xEED0, "Mouse 4", Colors.MOUSE_FG, new Glyph(0xEEF6, null, Colors.MOUSE_BG)),
-            new Glyph(0xEED1, "Mouse 5", Colors.MOUSE_FG, new Glyph(0xEEF7, null, Colors.MOUSE_BG)),
-            new Glyph(0xEED2, "Mouse Wheel Up", Colors.MOUSE_FG, new Glyph(0xEEF8, null, Colors.MOUSE_BG)),
-            new Glyph(0xEED3, "Mouse Wheel Down", Colors.MOUSE_FG, new Glyph(0xEEF9, null, Colors.MOUSE_BG)),
-            new Glyph(0xEEF3, "Mouse Button 1", Colors.MOUSE_BG),
-            new Glyph(0xEEF4, "Mouse Button 2", Colors.MOUSE_BG),
-            new Glyph(0xEEF5, "Mouse Button 3", Colors.MOUSE_BG),
-            new Glyph(0xEEF6, "Mouse Button 4", Colors.MOUSE_BG),
-            new Glyph(0xEEF7, "Mouse Button 5", Colors.MOUSE_BG),
-            new Glyph(0xEEF8, "Mouse Wheel Up Button", Colors.MOUSE_BG),
-            new Glyph(0xEEF9, "Mouse Wheel Down Button", Colors.MOUSE_BG)
-        ],
         "Special Characters": [
             new Glyph(0x0020, "Space"),
             new Glyph(0x000D, "CR"),
@@ -479,7 +487,11 @@
         this.onmouseout = _ => this.innerHTML = "COPY";
         symbolBox.value = "";
     };
-    Object.entries(FontGlyphs).forEach(entry => loop(entry, main))
+    var fragment = new DocumentFragment();
+    var main = document.createElement("main");
+    fragment.append(main);
+    Object.entries(FontGlyphs).forEach(entry => loop(entry, main));
+    document.body.appendChild(fragment);
     window.addEventListener("click", function (event) {
         if (event.target.tagName == "FIGURE") {
             const selection = window.getSelection();
@@ -521,7 +533,7 @@
             }
             group.appendChild(element);
         } else {
-            var groupContent = entry[0] ? makeGroup(entry[0], group) : group;
+            var groupContent = makeGroup(entry[0], group);
             Object.entries(entry[1]).forEach(function (entry) {
                 loop(entry, groupContent);
             });
@@ -530,16 +542,8 @@
 
     function makeGroup(name, group) {
         var groupContainer = document.createElement("section");
-
-        var groupHeader = document.createElement("h1");
-        groupHeader.innerHTML = name;
-        groupContainer.appendChild(groupHeader);
-
-        var groupContent = document.createElement("div");
-        groupContainer.appendChild(groupContent);
-
+        groupContainer.setAttribute("group-name", name)
         group.appendChild(groupContainer);
-
-        return groupContent;
+        return groupContainer;
     }
 })()

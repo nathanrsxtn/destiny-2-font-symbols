@@ -17,41 +17,47 @@ header {
     width: 100%;
     padding-bottom: 1rem;
     display: flex;
-    justify-content: space-around;
-    align-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
+    flex-flow: row nowrap;
     justify-content: center;
+    align-content: center;
+    align-items: stretch;
     background: linear-gradient(rgba(18, 23, 28, 1) 50%, rgba(18, 23, 28, 0) 100%);
 }
 
 main {
     width: 100%;
+    height: calc(100vh - 6.5rem - 2px);
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    height: calc(100vh - 6.5rem - 2px);
 }
 
-h1 {
+section::before {
+    content: attr(group-name);
+    display: block;
+    flex: 0 1 100%;
     margin: 0rem 1rem;
     font-size: 1rem;
+    font-weight: 700;
     text-align: center;
     color: rgba(245, 245, 245, 0.5);
 }
 
 section {
+    flex: 1 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
     margin: 0rem 0.1rem;
     border: 2px solid #41403d;
     border-radius: 0.5rem;
 }
 
 section section {
-    width: 100%;
     margin: 0;
     border-color: #41403d80;
     border-width: 1px;
@@ -60,13 +66,8 @@ section section {
     border-right-style: hidden;
 }
 
-section div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: flex-start;
+section section[group-name=""] {
+    display: contents;
 }
 
 section:hover {
@@ -84,13 +85,11 @@ section:hover > h1 {
 }
 
 figure {
-    display: inline;
-    flex-basis: 0.5rem;
+    flex: 0 0 0.5rem;
     padding: 0.15rem;
     border: 1px solid #41403d;
     border-radius: 0.5rem;
     margin: 0.15rem;
-    text-align: left;
     text-align: center;
     user-select: text;
     color: rgba(245, 245, 245, 0.5);
