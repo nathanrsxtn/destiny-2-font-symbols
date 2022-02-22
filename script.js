@@ -131,7 +131,8 @@
                     new Glyph(0xE113, "Heavy Grenade Launcher", Colors.HEAVY),
                     new Glyph(0xE152, "Linear Fusion Rifle", Colors.HEAVY),
                     new Glyph(0xE153, "Sword", Colors.HEAVY),
-                    new Glyph(0xE154, "Machine Gun", Colors.HEAVY)
+                    new Glyph(0xE154, "Machine Gun", Colors.HEAVY),
+                    new Glyph(0xE156, "Glaive", Colors.HEAVY)
                 ],
                 "Unique": [
                     new Glyph(0xE066, "Valkyrie Javelin", Colors.EXOTIC_LABEL),
@@ -159,7 +160,12 @@
                         new Glyph(0xE090, "Crystal Shatter", Colors.STASIS),
                         new Glyph(0xE118, "Arc Soul", Colors.ARC),
                         new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
-                        new Glyph(0xE091, "Bleak Watcher", Colors.STASIS)
+                        new Glyph(0xE091, "Bleak Watcher", Colors.STASIS),
+                        new Glyph(0xE093, "REDACTED", Colors.VOID),
+                        new Glyph(0xE094, "REDACTED", Colors.VOID),
+                        new Glyph(0xE095, "REDACTED", Colors.VOID),
+                        new Glyph(0xE096, "REDACTED", Colors.VOID),
+                        new Glyph(0xE097, "REDACTED", Colors.VOID),
                     ]
                 }
             },
@@ -265,6 +271,33 @@
                 new Glyph(0xE179, "Xbox Back Button", Colors.XBOX_CONTROL),
                 new Glyph(0xE180, "Xbox Start Button", Colors.XBOX_CONTROL),
                 new Glyph(0xE181, "Xbox Left Trigger", Colors.XBOX_CONTROL)
+            ],
+            "Nintendo": [
+                new Glyph(0xE230, "Nintendo B Button", Colors.PS_BUTTON, new Glyph(0xE250, null, Colors.XBOX_A)),
+                new Glyph(0xE231, "Nintendo A Button", Colors.PS_BUTTON, new Glyph(0xE250, null, Colors.XBOX_B)),
+                new Glyph(0xE232, "Nintendo Y Button", Colors.PS_BUTTON, new Glyph(0xE250, null, Colors.XBOX_X)),
+                new Glyph(0xE233, "Nintendo X Button", Colors.PS_BUTTON, new Glyph(0xE250, null, Colors.XBOX_Y)),
+                new Glyph(0xE234, "Nintendo Plus Button", Colors.XBOX_BUTTON, new Glyph(0xE250, null, Colors.XBOX_CONTROL)),
+                new Glyph(0xE235, "Nintendo Minus Button", Colors.XBOX_BUTTON, new Glyph(0xE250, null, Colors.XBOX_CONTROL)),
+                new Glyph(0xE236, "Nintendo R", Colors.XBOX_CONTROL),
+                new Glyph(0xE237, "Nintendo L", Colors.XBOX_CONTROL),
+                new Glyph(0xE238, "Nintendo ZL", Colors.XBOX_CONTROL),
+                new Glyph(0xE239, "Nintendo ZR", Colors.XBOX_CONTROL),
+                new Glyph(0xE240, "Nintendo Right Stick", Colors.XBOX_CONTROL),
+                new Glyph(0xE241, "Nintendo Right Click", Colors.XBOX_CONTROL),
+                new Glyph(0xE242, "Nintendo Left Stick", Colors.XBOX_CONTROL),
+                new Glyph(0xE243, "Nintendo Left Click", Colors.XBOX_CONTROL),
+                new Glyph(0xE244, "Nintendo D-Pad Up", Colors.XBOX_CONTROL),
+                new Glyph(0xE245, "Nintendo D-Pad Right", Colors.XBOX_CONTROL),
+                new Glyph(0xE246, "Nintendo D-Pad Down", Colors.XBOX_CONTROL),
+                new Glyph(0xE247, "Nintendo D-Pad Left", Colors.XBOX_CONTROL),
+                new Glyph(0xE248, "Nintendo Share Button", Colors.XBOX_CONTROL),
+                new Glyph(0xE249, "Nintendo Options Button", Colors.XBOX_CONTROL),
+                new Glyph(0xE250, "Nintendo Black Background", Colors.XBOX_CONTROL),
+                new Glyph(0xE251, "Nintendo Touch Background", Colors.XBOX_CONTROL),
+                new Glyph(0xE252, "Nintendo D-Pad All", Colors.XBOX_CONTROL),
+                new Glyph(0xE253, "Nintendo D-Pad Left + Right", Colors.XBOX_CONTROL),
+                new Glyph(0xE254, "Nintendo D-Pad Up + Down", Colors.XBOX_CONTROL)
             ],
             "Mouse": [
                 new Glyph(0xEECD, "Mouse 1", Colors.MOUSE_FG, new Glyph(0xEEF3, null, Colors.MOUSE_BG)),
