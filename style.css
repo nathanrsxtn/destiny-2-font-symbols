@@ -26,11 +26,11 @@ header {
 
 main {
     width: 100%;
-    height: calc(100vh - 6.5rem - 2px);
+    /* height: calc(100vh - 6.5rem - 2px); */
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     align-content: flex-start;
 }
 
@@ -55,6 +55,7 @@ section {
     margin: 0rem 0.1rem;
     border: 2px solid #41403d;
     border-radius: 0.5rem;
+    break-inside: avoid;
 }
 
 section section {
@@ -149,6 +150,9 @@ header input {
     box-sizing: content-box;
     border: none;
     border-bottom: 1px solid rgba(245, 245, 245, 0.2);
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
     outline: none;
     font-family: Arial, Destiny_Keys;
     font-size: 1.5rem;

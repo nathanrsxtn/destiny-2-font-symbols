@@ -124,15 +124,15 @@
                     new Glyph(0xE104, "Shotgun", Colors.SPECIAL),
                     new Glyph(0xE105, "Sniper Rifle", Colors.SPECIAL),
                     new Glyph(0xE106, "Fusion Rifle", Colors.SPECIAL),
-                    new Glyph(0xE155, "Light Grenade Launcher", Colors.SPECIAL)
+                    new Glyph(0xE155, "Light Grenade Launcher", Colors.SPECIAL),
+                    new Glyph(0xE156, "Glaive", Colors.SPECIAL)
                 ],
                 "Heavy": [
                     new Glyph(0xE108, "Rocket Launcher", Colors.HEAVY),
                     new Glyph(0xE113, "Heavy Grenade Launcher", Colors.HEAVY),
                     new Glyph(0xE152, "Linear Fusion Rifle", Colors.HEAVY),
                     new Glyph(0xE153, "Sword", Colors.HEAVY),
-                    new Glyph(0xE154, "Machine Gun", Colors.HEAVY),
-                    new Glyph(0xE156, "Glaive", Colors.HEAVY)
+                    new Glyph(0xE154, "Machine Gun", Colors.HEAVY)
                 ],
                 "Unique": [
                     new Glyph(0xE066, "Valkyrie Javelin", Colors.EXOTIC_LABEL),
@@ -169,6 +169,9 @@
                         new Glyph(0xE114, "Consecration", Colors.SOLAR),
                         new Glyph(0xE115, "Gunpowder Gamble", Colors.SOLAR),
                         new Glyph(0xE116, "Incinerator Snap", Colors.SOLAR),
+                    ],
+                    "": [
+                        new Glyph(0xE142, "Headshot")
                     ]
                 }
             },
@@ -180,9 +183,6 @@
                 new Glyph(0xE134, "Shield Artifact"),
                 new Glyph(0xE135, "Loader Tank"),
                 new Glyph(0xE137, "Drake")
-            ],
-            "": [
-                new Glyph(0xE142, "Headshot")
             ]
         },
         "Character": {
@@ -222,31 +222,30 @@
         },
         "Controllers": {
             "Playstation": [
-                new Glyph(0xE000, "Playstation Cross Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_CROSS)),
-                new Glyph(0xE001, "Playstation Circle Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_CIRCLE)),
-                new Glyph(0xE002, "Playstation Square Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_SQUARE)),
-                new Glyph(0xE003, "Playstation Triangle Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_TRIANGLE)),
-                new Glyph(0xE004, "Playstation Start Button", Colors.PS_TOUCH_FG, new Glyph(0xE021, null, Colors.PS_TOUCH_BG)),
-                new Glyph(0xE005, "Playstation Select Button", Colors.PS_TOUCH_FG, new Glyph(0xE021, null, Colors.PS_TOUCH_BG)),
-                new Glyph(0xE006, "Playstation R2", Colors.PS_CONTROL),
-                new Glyph(0xE007, "Playstation L2", Colors.PS_CONTROL),
-                new Glyph(0xE008, "Playstation L1", Colors.PS_CONTROL),
-                new Glyph(0xE009, "Playstation R1", Colors.PS_CONTROL),
-                new Glyph(0xE010, "Playstation Right Stick", Colors.PS_CONTROL),
-                new Glyph(0xE011, "Playstation Right Click", Colors.PS_CONTROL),
-                new Glyph(0xE012, "Playstation Left Stick", Colors.PS_CONTROL),
-                new Glyph(0xE013, "Playstation Left Click", Colors.PS_CONTROL),
-                new Glyph(0xE014, "Playstation D-Pad Up", Colors.PS_CONTROL),
-                new Glyph(0xE015, "Playstation D-Pad Right", Colors.PS_CONTROL),
-                new Glyph(0xE016, "Playstation D-Pad Down", Colors.PS_CONTROL),
-                new Glyph(0xE017, "Playstation D-Pad Left", Colors.PS_CONTROL),
-                new Glyph(0xE018, "Playstation Share", Colors.PS_CONTROL),
-                new Glyph(0xE019, "Playstation Options", Colors.PS_CONTROL),
-                new Glyph(0xE020, "Playstation Black Background", Colors.PS_CONTROL),
-                new Glyph(0xE021, "Playstation Touch Background", Colors.PS_CONTROL),
-                new Glyph(0xE022, "Playstation D-Pad All", Colors.PS_CONTROL),
-                new Glyph(0xE023, "Playstation D-Pad Left + Right", Colors.PS_CONTROL),
-                new Glyph(0xE024, "Playstation D-Pad Up + Down", Colors.PS_CONTROL)
+                new Glyph(0xE025, "Playstation Cross Button", Colors.PS_BUTTON, new Glyph(0xE045, null, Colors.PS_CROSS)),
+                new Glyph(0xE026, "Playstation Circle Button", Colors.PS_BUTTON, new Glyph(0xE045, null, Colors.PS_CIRCLE)),
+                new Glyph(0xE027, "Playstation Square Button", Colors.PS_BUTTON, new Glyph(0xE045, null, Colors.PS_SQUARE)),
+                new Glyph(0xE028, "Playstation Triangle Button", Colors.PS_BUTTON, new Glyph(0xE045, null, Colors.PS_TRIANGLE)),
+                new Glyph(0xE029, "Playstation Share Button", Colors.PS_CONTROL),
+                new Glyph(0xE030, "Playstation Touch Button", Colors.PS_TOUCH_FG, new Glyph(0xE046, null, Colors.PS_TOUCH_BG)),
+                new Glyph(0xE031, "Playstation R2", Colors.PS_CONTROL),
+                new Glyph(0xE032, "Playstation L2", Colors.PS_CONTROL),
+                new Glyph(0xE033, "Playstation L1", Colors.PS_CONTROL),
+                new Glyph(0xE034, "Playstation R1", Colors.PS_CONTROL),
+                new Glyph(0xE035, "Playstation Right Stick", Colors.PS_CONTROL),
+                new Glyph(0xE036, "Playstation Right Click", Colors.PS_CONTROL),
+                new Glyph(0xE037, "Playstation Left Stick", Colors.PS_CONTROL),
+                new Glyph(0xE038, "Playstation Left Click", Colors.PS_CONTROL),
+                new Glyph(0xE039, "Playstation D-Pad Up", Colors.PS_CONTROL),
+                new Glyph(0xE040, "Playstation D-Pad Right", Colors.PS_CONTROL),
+                new Glyph(0xE041, "Playstation D-Pad Down", Colors.PS_CONTROL),
+                new Glyph(0xE042, "Playstation D-Pad Left", Colors.PS_CONTROL),
+                new Glyph(0xE044, "Playstation Options", Colors.PS_CONTROL),
+                new Glyph(0xE045, "Playstation Black Background", Colors.PS_CONTROL),
+                new Glyph(0xE046, "Playstation Touch Background", Colors.PS_CONTROL),
+                new Glyph(0xE047, "Playstation D-Pad All", Colors.PS_CONTROL),
+                new Glyph(0xE048, "Playstation D-Pad Left + Right", Colors.PS_CONTROL),
+                new Glyph(0xE049, "Playstation D-Pad Up + Down", Colors.PS_CONTROL)
             ],
             "Xbox": [
                 new Glyph(0xE157, "Xbox D-Pad Left + Right", Colors.XBOX_CONTROL),
@@ -317,7 +316,34 @@
                 new Glyph(0xEEF7, "Mouse Button 5", Colors.MOUSE_BG),
                 new Glyph(0xEEF8, "Mouse Wheel Up Button", Colors.MOUSE_BG),
                 new Glyph(0xEEF9, "Mouse Wheel Down Button", Colors.MOUSE_BG)
-            ]
+            ],
+            "Old": [
+                new Glyph(0xE000, "Playstation Cross Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_CROSS)),
+                new Glyph(0xE001, "Playstation Circle Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_CIRCLE)),
+                new Glyph(0xE002, "Playstation Square Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_SQUARE)),
+                new Glyph(0xE003, "Playstation Triangle Button", Colors.PS_BUTTON, new Glyph(0xE020, null, Colors.PS_TRIANGLE)),
+                new Glyph(0xE004, "Playstation Start Button", Colors.PS_TOUCH_FG, new Glyph(0xE021, null, Colors.PS_TOUCH_BG)),
+                new Glyph(0xE005, "Playstation Select Button", Colors.PS_TOUCH_FG, new Glyph(0xE021, null, Colors.PS_TOUCH_BG)),
+                new Glyph(0xE006, "Playstation R2", Colors.PS_CONTROL),
+                new Glyph(0xE007, "Playstation L2", Colors.PS_CONTROL),
+                new Glyph(0xE008, "Playstation L1", Colors.PS_CONTROL),
+                new Glyph(0xE009, "Playstation R1", Colors.PS_CONTROL),
+                new Glyph(0xE010, "Playstation Right Stick", Colors.PS_CONTROL),
+                new Glyph(0xE011, "Playstation Right Click", Colors.PS_CONTROL),
+                new Glyph(0xE012, "Playstation Left Stick", Colors.PS_CONTROL),
+                new Glyph(0xE013, "Playstation Left Click", Colors.PS_CONTROL),
+                new Glyph(0xE014, "Playstation D-Pad Up", Colors.PS_CONTROL),
+                new Glyph(0xE015, "Playstation D-Pad Right", Colors.PS_CONTROL),
+                new Glyph(0xE016, "Playstation D-Pad Down", Colors.PS_CONTROL),
+                new Glyph(0xE017, "Playstation D-Pad Left", Colors.PS_CONTROL),
+                new Glyph(0xE018, "Playstation Share", Colors.PS_CONTROL),
+                new Glyph(0xE019, "Playstation Options", Colors.PS_CONTROL),
+                new Glyph(0xE020, "Playstation Black Background", Colors.PS_CONTROL),
+                new Glyph(0xE021, "Playstation Touch Background", Colors.PS_CONTROL),
+                new Glyph(0xE022, "Playstation D-Pad All", Colors.PS_CONTROL),
+                new Glyph(0xE023, "Playstation D-Pad Left + Right", Colors.PS_CONTROL),
+                new Glyph(0xE024, "Playstation D-Pad Up + Down", Colors.PS_CONTROL)
+            ],
         },
         "Keyboard": {
             "Capital Keys": [
@@ -528,7 +554,7 @@
     fragment.append(main);
     Object.entries(FontGlyphs).forEach(entry => loop(entry, main));
     document.body.appendChild(fragment);
-    window.addEventListener("click", function (event) {
+    window.addEventListener("pointerup", function (event) {
         if (event.target.tagName == "FIGURE") {
             const selection = window.getSelection();
             const range = document.createRange();
@@ -540,7 +566,7 @@
             selection.removeAllRanges();
             event.target.title = "Copied!";
             if (title != event.target.title) {
-                event.target.addEventListener("mouseout", _ => event.target.title = title, {
+                event.target.addEventListener("pointerout", _ => event.target.title = title, {
                     once: true
                 });
             }
