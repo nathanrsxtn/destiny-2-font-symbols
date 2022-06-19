@@ -162,7 +162,7 @@
                         new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
                         new Glyph(0xE091, "Bleak Watcher", Colors.STASIS),
                         new Glyph(0xE093, "Child of the Old Gods", Colors.VOID),
-                        new Glyph(0xE094, "REDACTED", Colors.VOID),
+                        new Glyph(0xE094, "Controlled Demolition", Colors.VOID),
                         new Glyph(0xE095, "Shield Throw", Colors.VOID),
                         new Glyph(0xE096, "Pocket Singularity", Colors.VOID),
                         new Glyph(0xE097, "Quickfall", Colors.VOID),
