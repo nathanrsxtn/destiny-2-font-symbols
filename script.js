@@ -86,7 +86,8 @@
                     ],
                     "Arcstrider": [
                         new Glyph(0xE063, "Whirlwind Guard", Colors.ARC),
-                        new Glyph(0xE121, "Arc Staff", Colors.ARC)
+                        new Glyph(0xE121, "Arc Staff", Colors.ARC),
+                        new Glyph(0xEEFD, "Gathering Storm", Colors.ARC)
                     ],
                     "Revenant": [
                         new Glyph(0xE084, "Silence and Squall", Colors.STASIS),
@@ -141,39 +142,48 @@
                     new Glyph(0xE150, "Skyburner's Oath", Colors.EXOTIC_LABEL),
                     new Glyph(0xE151, "Lord of Wolves", Colors.EXOTIC_LABEL)
                 ],
-                "Abilities": {
-                    "Normal": [
-                        new Glyph(0xE110, "Melee"),
-                        new Glyph(0xE111, "Grenade"),
-                        new Glyph(0xE112, "Smoke"),
-                        new Glyph(0xE141, "Environment Hazard / Misadventure")
-                    ],
-                    "Charged": [
-                        new Glyph(0xE067, "Throwing Hammer", Colors.SOLAR),
-                        new Glyph(0xE080, "Coldsnap Grenade", Colors.STASIS),
-                        new Glyph(0xE081, "Duskfield Grenade", Colors.STASIS),
-                        new Glyph(0xE082, "Glacier Grenade", Colors.STASIS),
-                        new Glyph(0xE086, "Glacial Quake", Colors.STASIS),
-                        new Glyph(0xE087, "Withering Blade", Colors.STASIS),
-                        new Glyph(0xE088, "Penumbral Blast", Colors.STASIS),
-                        new Glyph(0xE089, "Encasement Shatter", Colors.STASIS),
-                        new Glyph(0xE090, "Crystal Shatter", Colors.STASIS),
-                        new Glyph(0xE118, "Arc Soul", Colors.ARC),
-                        new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
-                        new Glyph(0xE091, "Bleak Watcher", Colors.STASIS),
-                        new Glyph(0xE093, "Child of the Old Gods", Colors.VOID),
-                        new Glyph(0xE094, "Controlled Demolition", Colors.VOID),
-                        new Glyph(0xE095, "Shield Throw", Colors.VOID),
-                        new Glyph(0xE096, "Pocket Singularity", Colors.VOID),
-                        new Glyph(0xE097, "Quickfall", Colors.VOID),
-                        new Glyph(0xE114, "Consecration", Colors.SOLAR),
-                        new Glyph(0xE115, "Gunpowder Gamble", Colors.SOLAR),
-                        new Glyph(0xE116, "Incinerator Snap", Colors.SOLAR),
-                    ],
-                    "": [
-                        new Glyph(0xE142, "Headshot")
-                    ]
-                }
+                "": [
+                    new Glyph(0xE142, "Headshot")
+                ]
+            },
+            "Abilities": {
+                "Normal": [
+                    new Glyph(0xE110, "Melee"),
+                    new Glyph(0xE111, "Grenade"),
+                    new Glyph(0xE112, "Smoke"),
+                    new Glyph(0xE141, "Environment Hazard / Misadventure")
+                ],
+                "Titan": [
+                    new Glyph(0xE095, "Shield Throw", Colors.VOID),
+                    new Glyph(0xE067, "Throwing Hammer", Colors.SOLAR),
+                    new Glyph(0xEEFB, "Thunderclap", Colors.ARC),
+                    new Glyph(0xE086, "Glacial Quake", Colors.STASIS)
+                ],
+                "Hunter": [
+                    new Glyph(0xE097, "Quickfall", Colors.VOID),
+                    new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
+                    new Glyph(0xE114, "Consecration", Colors.SOLAR),
+                    new Glyph(0xE115, "Gunpowder Gamble", Colors.SOLAR),
+                    new Glyph(0xE087, "Withering Blade", Colors.STASIS)
+                ],
+                "Warlock": [
+                    new Glyph(0xE093, "Child of the Old Gods", Colors.VOID),
+                    new Glyph(0xE096, "Pocket Singularity", Colors.VOID),
+                    new Glyph(0xE116, "Incinerator Snap", Colors.SOLAR),
+                    new Glyph(0xE118, "Arc Soul", Colors.ARC),
+                    new Glyph(0xEEFC, "Lightning Surge", Colors.ARC),
+                    new Glyph(0xE091, "Bleak Watcher", Colors.STASIS),
+                    new Glyph(0xE088, "Penumbral Blast", Colors.STASIS)
+                ],
+                "Shared": [
+                    new Glyph(0xE094, "Controlled Demolition", Colors.VOID),
+                    new Glyph(0xEEFE, "Arc Jolt", Colors.ARC),
+                    new Glyph(0xE080, "Coldsnap Grenade", Colors.STASIS),
+                    new Glyph(0xE081, "Duskfield Grenade", Colors.STASIS),
+                    new Glyph(0xE082, "Glacier Grenade", Colors.STASIS),
+                    new Glyph(0xE089, "Encasement Shatter", Colors.STASIS),
+                    new Glyph(0xE090, "Crystal Shatter", Colors.STASIS)
+                ]
             },
             "Vehicles": [
                 new Glyph(0xE130, "Turret"),
