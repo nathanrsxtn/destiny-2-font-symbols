@@ -73,12 +73,12 @@ section section[group-name=""] {
 
 section:hover {
     border-color: #41403d;
-    transition-duration: 0.25s;
+    transition-duration: 0s;
     transition-property: color, background, border;
     transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
 }
 
-section:hover > h1 {
+section:hover::before {
     color: rgba(245, 245, 245, 1);
     transition-duration: 0.25s;
     transition-property: color;

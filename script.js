@@ -1,5 +1,5 @@
 (async function () {
-    var Font = await opentype.load("fonts/Destiny_Keys.otf");
+    const Font = await opentype.load("fonts/Destiny_Keys.otf");
     const Colors = Object.freeze({
         VOID: "#B07CDB",
         SOLAR: "#E7601D",
@@ -42,11 +42,7 @@
             this.glyph = String.fromCharCode(unicode);
             this.name = name;
             this.color = color;
-            if (background instanceof Glyph) {
-                this.backgroundGlyph = background;
-            } else {
-                this.backgroundColor = background;
-            }
+            this[background instanceof Glyph ? "backgroundGlyph" : "backgroundColor"] = background;
             let glyph;
             if (glyph = Font.charToGlyph(String.fromCharCode(unicode))) {
                 this.glyphName = glyph.name;
@@ -526,7 +522,7 @@
                 new Glyph(0xEED8, "Key F5", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEED9, "Key F6", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEEDA, "Key Escape", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
-                new Glyph(0xEEDF, "Key Foward Slash", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEEDF, "Key Forward Slash", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEEE0, "Key F7", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEEE1, "Key F8", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEEE2, "Key F9", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
@@ -551,20 +547,20 @@
             new Glyph(0xFFFD, "Replacement Character")
         ]
     }
-    var symbolBox = document.querySelector("#symbolBox");
-    document.querySelector("#symbolBoxCopy").onclick = function () {
+    const symbolBox = document.querySelector("#symbolBox");
+    document.querySelector("#symbolBoxCopy").onclick = () => {
         symbolBox.select();
         document.execCommand("copy");
         this.innerHTML = "COPIED!";
         this.onmouseout = _ => this.innerHTML = "COPY";
         symbolBox.value = "";
     };
-    var fragment = new DocumentFragment();
-    var main = document.createElement("main");
+    const fragment = new DocumentFragment();
+    const main = document.createElement("main");
     fragment.append(main);
     Object.entries(FontGlyphs).forEach(entry => loop(entry, main));
     document.body.appendChild(fragment);
-    window.addEventListener("pointerup", function (event) {
+    window.addEventListener("pointerup", (event) => {
         if (event.target.tagName == "FIGURE") {
             const selection = window.getSelection();
             const range = document.createRange();
@@ -575,11 +571,7 @@
             document.execCommand('copy');
             selection.removeAllRanges();
             event.target.title = "Copied!";
-            if (title != event.target.title) {
-                event.target.addEventListener("pointerout", _ => event.target.title = title, {
-                    once: true
-                });
-            }
+            if (title != event.target.title) event.target.addEventListener("pointerout", _ => event.target.title = title, { once: true });
             symbolBox.value += event.target.getAttribute("glyph");
             symbolBox.focus();
         }
@@ -587,33 +579,27 @@
 
     function loop(entry, group) {
         if (entry[1] instanceof Glyph) {
-            var element = document.createElement("figure");
+            const element = document.createElement("figure");
             element.innerHTML = entry[1].glyph;
             element.setAttribute("glyph", entry[1].glyph);
-            var tooltipUnicodeLine = `U+${entry[1].unicode}`;
+            let tooltipUnicodeLine = `U+${entry[1].unicode}`;
             if (entry[1].backgroundGlyph) {
                 tooltipUnicodeLine += ` (U+${entry[1].backgroundGlyph.unicode} Background)`;
                 element.setAttribute("background-glyph", entry[1].backgroundGlyph.glyph);
                 element.style.setProperty('--background-color', entry[1].backgroundGlyph.color);
-            } else {
-                element.style.setProperty('--background-color', entry[1].backgroundColor);
-            }
+            } else element.style.setProperty('--background-color', entry[1].backgroundColor);
             element.title = `${entry[1].name} (${entry[1].glyphName})\n${tooltipUnicodeLine}\nClick to Copy`;
             element.style.setProperty('--color', entry[1].color);
-            if (entry[1].glyphWidth <= 0) {
-                element.setAttribute("zero-width", "");
-            }
+            if (entry[1].glyphWidth <= 0) element.setAttribute("zero-width", "");
             group.appendChild(element);
         } else {
-            var groupContent = makeGroup(entry[0], group);
-            Object.entries(entry[1]).forEach(function (entry) {
-                loop(entry, groupContent);
-            });
+            const groupContent = makeGroup(entry[0], group);
+            Object.entries(entry[1]).forEach((entry) => loop(entry, groupContent));
         }
     }
 
     function makeGroup(name, group) {
-        var groupContainer = document.createElement("section");
+        const groupContainer = document.createElement("section");
         groupContainer.setAttribute("group-name", name)
         group.appendChild(groupContainer);
         return groupContainer;
