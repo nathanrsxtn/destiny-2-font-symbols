@@ -37,6 +37,7 @@
     });
 
     class Glyph {
+        static unicodes = [];
         constructor(unicode, name, color = null, background = null) {
             this.unicode = unicode.toString(16).padStart(4, 0).toUpperCase();
             this.glyph = String.fromCharCode(unicode);
@@ -48,6 +49,7 @@
                 this.glyphName = glyph.name;
                 this.glyphWidth = glyph.advanceWidth;
             }
+            Glyph.unicodes.push(unicode);
         }
     }
 
@@ -153,7 +155,8 @@
                     new Glyph(0xE095, "Shield Throw", Colors.VOID),
                     new Glyph(0xE067, "Throwing Hammer", Colors.SOLAR),
                     new Glyph(0xEEFB, "Thunderclap", Colors.ARC),
-                    new Glyph(0xE086, "Glacial Quake", Colors.STASIS)
+                    new Glyph(0xE086, "Glacial Quake", Colors.STASIS),
+                    new Glyph(0xE092, "Diamond Lance", Colors.STASIS)
                 ],
                 "Hunter": [
                     new Glyph(0xE097, "Quickfall", Colors.VOID),
@@ -471,6 +474,16 @@
                 new Glyph(0xEE2D, "Key Minus", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEE2E, "Key Period", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEE2F, "Key Slash", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE30, "Key Zero", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE31, "Key One", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE32, "Key Two", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE33, "Key Three", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE34, "Key Four", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE35, "Key Five", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE36, "Key Six", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE37, "Key Seven", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE38, "Key Eight", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
+                new Glyph(0xEE39, "Key Nine", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEE3A, "Key Colon", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEE3B, "Key Semicolon", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
                 new Glyph(0xEE3C, "Key Less-Than Sign", Colors.KEY_FG, new Glyph(0xEEF0, null, Colors.KEY_BG)),
@@ -547,6 +560,8 @@
             new Glyph(0xFFFD, "Replacement Character")
         ]
     }
+    const missingCharacters = Object.values(Font.glyphs.glyphs).filter(glyph => glyph.unicode && !Glyph.unicodes.includes(glyph.unicode)).map(glyph => new Glyph(glyph.unicode, glyph.name));
+    if (missingCharacters.length) FontGlyphs["Unknown"] = missingCharacters;
     const symbolBox = document.querySelector("#symbolBox");
     document.querySelector("#symbolBoxCopy").onclick = () => {
         symbolBox.select();
@@ -558,7 +573,7 @@
     const fragment = new DocumentFragment();
     const main = document.createElement("main");
     fragment.append(main);
-    Object.entries(FontGlyphs).forEach(entry => loop(entry, main));
+    Object.entries(FontGlyphs).forEach(entry => loop(entry, main)); 
     document.body.appendChild(fragment);
     window.addEventListener("pointerup", (event) => {
         if (event.target.tagName == "FIGURE") {
