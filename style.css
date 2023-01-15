@@ -26,12 +26,8 @@ header {
 
 main {
     width: 100%;
-    /* height: calc(100vh - 6.5rem - 2px); */
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: flex-start;
+    columns: 3 290px;
+    gap: 0px;
 }
 
 section::before {
