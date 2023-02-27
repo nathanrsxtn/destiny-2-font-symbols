@@ -5,6 +5,7 @@
         SOLAR: "#E7601D",
         ARC: "#81B5E4",
         STASIS: "#5E7AFD",
+        STRAND: "#38da65",
         QUEST: "#1A2044",
         PS_CONTROL: "#E6E6E6",
         PS_BUTTON: "#444444",
@@ -71,6 +72,9 @@
                     ],
                     "Behemoth": [
                         new Glyph(0xE083, "Shiver Strike", Colors.STASIS)
+                    ],
+                    "Berserker": [
+                        new Glyph(0xEF0C, "Bladefury", Colors.STRAND),
                     ]
                 },
                 "Hunter": {
@@ -89,6 +93,9 @@
                     ],
                     "Revenant": [
                         new Glyph(0xE084, "Silence and Squall", Colors.STASIS),
+                    ],
+                    "Threadrunner": [
+                        new Glyph(0xEF0B, "Silkstrike", Colors.STRAND)
                     ]
                 },
                 "Warlock": {
@@ -106,6 +113,9 @@
                     ],
                     "Shadebinder": [
                         new Glyph(0xE085, "Winter's Wrath", Colors.STASIS)
+                    ],
+                    "Broodweaver": [
+                        new Glyph(0xEF0D, "Needlestorm", Colors.STRAND),
                     ]
                 }
             },
@@ -156,14 +166,18 @@
                     new Glyph(0xE067, "Throwing Hammer", Colors.SOLAR),
                     new Glyph(0xEEFB, "Thunderclap", Colors.ARC),
                     new Glyph(0xE086, "Glacial Quake", Colors.STASIS),
-                    new Glyph(0xE092, "Diamond Lance", Colors.STASIS)
+                    new Glyph(0xE092, "Diamond Lance", Colors.STASIS),
+                    new Glyph(0xEF07, "Frenzied Blade", Colors.STRAND),
+                    new Glyph(0xEF0A, "Drengr's Lash", Colors.STRAND)
                 ],
                 "Hunter": [
                     new Glyph(0xE097, "Quickfall", Colors.VOID),
                     new Glyph(0xE124, "Throwing Knife", Colors.SOLAR),
                     new Glyph(0xE114, "Consecration", Colors.SOLAR),
                     new Glyph(0xE115, "Gunpowder Gamble", Colors.SOLAR),
-                    new Glyph(0xE087, "Withering Blade", Colors.STASIS)
+                    new Glyph(0xE087, "Withering Blade", Colors.STASIS),
+                    new Glyph(0xEF06, "Threaded Spike", Colors.STRAND),
+                    new Glyph(0xEF09, "Ensnaring Slam", Colors.STRAND)
                 ],
                 "Warlock": [
                     new Glyph(0xE093, "Child of the Old Gods", Colors.VOID),
@@ -172,7 +186,8 @@
                     new Glyph(0xE118, "Arc Soul", Colors.ARC),
                     new Glyph(0xEEFC, "Lightning Surge", Colors.ARC),
                     new Glyph(0xE091, "Bleak Watcher", Colors.STASIS),
-                    new Glyph(0xE088, "Penumbral Blast", Colors.STASIS)
+                    new Glyph(0xE088, "Penumbral Blast", Colors.STASIS),
+                    new Glyph(0xEF08, "Arcane Needle", Colors.STRAND)
                 ],
                 "Shared": [
                     new Glyph(0xE094, "Controlled Demolition", Colors.VOID),
@@ -181,7 +196,15 @@
                     new Glyph(0xE081, "Duskfield Grenade", Colors.STASIS),
                     new Glyph(0xE082, "Glacier Grenade", Colors.STASIS),
                     new Glyph(0xE089, "Encasement Shatter", Colors.STASIS),
-                    new Glyph(0xE090, "Crystal Shatter", Colors.STASIS)
+                    new Glyph(0xE090, "Crystal Shatter", Colors.STASIS),
+                    new Glyph(0xEEFF, "Threadling", Colors.STRAND),
+                    new Glyph(0xEF00, "Infest", Colors.STRAND),
+                    new Glyph(0xEF01, "Tangle", Colors.STRAND),
+                    new Glyph(0xEF02, "Suspend Grenade", Colors.STRAND),
+                    new Glyph(0xEF03, "Threadling Grenade", Colors.STRAND),
+                    new Glyph(0xEF04, "Grappling Hook", Colors.STRAND),
+                    new Glyph(0xEF0E, "Strand Kill", Colors.STRAND),
+                    new Glyph(0xEF05, "Grapple Melee", Colors.STRAND),
                 ]
             },
             "Vehicles": [
@@ -573,7 +596,7 @@
     const fragment = new DocumentFragment();
     const main = document.createElement("main");
     fragment.append(main);
-    Object.entries(FontGlyphs).forEach(entry => loop(entry, main)); 
+    Object.entries(FontGlyphs).forEach(entry => loop(entry, main));
     document.body.appendChild(fragment);
     window.addEventListener("pointerup", (event) => {
         if (event.target.tagName == "FIGURE") {
