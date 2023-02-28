@@ -3,107 +3,88 @@
     src: url(fonts/Destiny_Keys.otf);
 }
 
+:root {
+    font-size: 16px;
+}
+
 body {
     margin: 0.25rem;
-    font-family: Arial, Destiny_Keys;
-    text-transform: uppercase;
-    user-select: none;
     background-color: rgb(18, 23, 28);
+    text-transform: uppercase;
+    font-family: Arial, Destiny_Keys;
 }
 
 header {
+    display: flex;
     position: sticky;
     top: 0;
-    width: 100%;
-    padding-bottom: 1rem;
-    display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    align-content: center;
     align-items: stretch;
+    justify-content: center;
     background: linear-gradient(rgba(18, 23, 28, 1) 50%, rgba(18, 23, 28, 0) 100%);
+    padding-bottom: 1rem;
+    width: 100%;
 }
 
 main {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-auto-rows: min-content;
+    justify-items: stretch;
     width: 100%;
-    columns: 3 290px;
-    gap: 0px;
 }
 
 section::before {
-    content: attr(group-name);
     display: block;
-    flex: 0 1 100%;
-    margin: 0rem 1rem;
-    font-size: 1rem;
-    font-weight: 700;
+    width: 100%;
     text-align: center;
     color: rgba(245, 245, 245, 0.5);
+    font-size: 0.7rem;
+    font-weight: 700;
+    content: attr(group-name);
 }
 
 section {
-    flex: 1 1;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: flex-start;
-    margin: 0rem 0.1rem;
-    border: 2px solid #41403d;
+    margin: 0.1rem;
+    border: 2px solid #41403d80;
     border-radius: 0.5rem;
-    break-inside: avoid;
 }
 
-section section {
-    margin: 0;
-    border-color: #41403d80;
-    border-width: 1px;
-    border-radius: 0;
-    border-left-style: hidden;
-    border-right-style: hidden;
+section div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-section section[group-name=""] {
-    display: contents;
-}
-
-section:hover {
-    border-color: #41403d;
-    transition-duration: 0s;
-    transition-property: color, background, border;
-    transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
-}
-
-section:hover::before {
-    color: rgba(245, 245, 245, 1);
-    transition-duration: 0.25s;
-    transition-property: color;
-    transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
+section div:nth-child(2) {
+    margin-top: 0.4em;
 }
 
 figure {
-    flex: 0 0 0.5rem;
-    padding: 0.15rem;
+    transition-property: color, background;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
+    margin: 0.15rem;
     border: 1px solid #41403d;
     border-radius: 0.5rem;
-    margin: 0.15rem;
-    text-align: center;
-    user-select: text;
-    color: rgba(245, 245, 245, 0.5);
     cursor: copy;
-    transition-duration: 0.25s;
-    transition-property: color, background;
-    transition-timing-function: cubic-bezier(0.69, 0, 0, 1);
+    padding: 0.15rem;
+    text-align: center;
+    color: var(--color, #f5f5f5);
+}
+
+figure[background-glyph] {
+    color: #f5f5f5;
 }
 
 figure:hover {
-    color: var(--color, #f5f5f5);
     background: var(--background-color, #f5f5f530);
 }
 
 figure[zero-width] {
-    flex-basis: 1.25rem;
     text-align: left;
+    flex-basis: 1.25rem;
 }
 
 figure[background-glyph]:hover {
@@ -111,53 +92,59 @@ figure[background-glyph]:hover {
 }
 
 figure[background-glyph]:hover::before {
-    content: attr(background-glyph);
     color: var(--background-color);
+    content: attr(background-glyph);
 }
 
 figure:hover::after {
-    position: fixed;
+    position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    padding: 0.25rem;
-    content: attr(glyph);
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: none;
     opacity: 1;
-    pointer-events: none;
     background: linear-gradient(rgba(18, 23, 28, 0.5) 50%, rgba(18, 23, 28, 0) 100%);
+    pointer-events: none;
+    padding: 0.25rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    content: attr(glyph);
 }
 
 figure:active {
-    color: #212833;
     background: #f5f5f5 !important;
+    color: #212833;
 }
 
-figure::selection {
-    background: #b78c2580;
+@media (width > 900px) {
+    :root {
+        font-size: 20px;
+    }
+    main {
+        grid-template: repeat(5, min-content) / repeat(8, auto);
+    }
 }
 
 header input {
-    width: 100%;
-    height: 2.5rem;
-    padding: 0.75rem 1rem;
     box-sizing: content-box;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: 0.5s;
+    outline: none;
     border: none;
     border-bottom: 1px solid rgba(245, 245, 245, 0.2);
-    -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
-    outline: none;
+    background: transparent;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    height: 2rem;
+    text-transform: none;
+    line-height: 2rem;
+    color: #f5f5f5;
+    caret-color: #b78c25;
     font-family: Arial, Destiny_Keys;
     font-size: 1.5rem;
-    line-height: 2.5rem;
-    text-transform: none;
-    caret-color: #b78c25;
-    color: #f5f5f5;
-    background: transparent;
-    transition: 0.5s;
 }
 
 header input:focus {
@@ -169,50 +156,49 @@ header input::selection {
 }
 
 button {
-    position: relative;
     display: inline-flex;
-    padding: 12px 24px;
-    border: none;
+    position: relative;
     align-items: center;
     justify-content: center;
+    transition: .25s;
+    border: none;
+    background: rgba(29, 34, 45, .4);
+    cursor: pointer;
+    padding: 12px 24px;
+    line-height: 1.5rem;
+    color: #f5f5f5;
     font-family: Arial, Destiny_Keys;
     font-size: .925rem;
-    line-height: 1.5rem;
     font-weight: 500;
-    user-select: none;
-    cursor: pointer;
-    color: #f5f5f5;
-    background: rgba(29, 34, 45, .4);
-    transition: .25s;
 }
 
 button::after {
+    display: block;
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    display: block;
-    content: "";
-    border: 1px solid #f5f5f5;
+    left: 0;
     transition: .25s;
+    border: 1px solid #f5f5f5;
+    content: "";
 }
 
 button:hover {
-    background: #1d222d;
     box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .25);
+    background: #1d222d;
 }
 
 button:hover::after {
     top: -5px;
-    left: -5px;
     right: -5px;
     bottom: -5px;
+    left: -5px;
 }
 
 button.gold-button {
-    color: #f5f5f5;
     background: rgba(183, 140, 37, .8);
+    color: #f5f5f5;
 }
 
 button.gold-button::after {
@@ -237,14 +223,14 @@ button.gold-button:active {
 }
 
 ::-webkit-scrollbar-track {
-    background: #181c25;
     box-shadow: inset 0 0 5px #12171c;
+    background: #181c25;
 }
 
 ::-webkit-scrollbar-thumb {
     border: 1px solid #181c25;
-    background: #232936;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background: #232936;
 }
 
 ::-webkit-scrollbar-thumb:hover {
