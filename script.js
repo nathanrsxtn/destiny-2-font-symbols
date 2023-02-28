@@ -106,7 +106,8 @@
                 new Glyph(0XE126, "Hammer of Sol", Colors.SOLAR)
             ],
             [
-                new Glyph(0XE067, "Throwing Hammer", Colors.SOLAR)
+                new Glyph(0XE067, "Throwing Hammer", Colors.SOLAR),
+                new Glyph(0XE114, "Consecration", Colors.SOLAR)
             ]
         ],
         "Gunslinger": [
@@ -116,7 +117,6 @@
             ],
             [
                 new Glyph(0XE124, "Throwing Knife", Colors.SOLAR),
-                new Glyph(0XE114, "Consecration", Colors.SOLAR),
                 new Glyph(0XE115, "Gunpowder Gamble", Colors.SOLAR)
             ]
         ],
