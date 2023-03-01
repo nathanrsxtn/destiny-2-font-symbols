@@ -207,17 +207,16 @@
         ],
         "Strand": [
             [
+                new Glyph(0XEF0E, "Strand Kill", Colors.STRAND)
+            ],
+            [
                 new Glyph(0XEEFF, "Threadling", Colors.STRAND),
                 new Glyph(0XEF00, "Infest", Colors.STRAND),
                 new Glyph(0XEF01, "Tangle", Colors.STRAND),
                 new Glyph(0XEF02, "Suspend Grenade", Colors.STRAND),
                 new Glyph(0XEF03, "Threadling Grenade", Colors.STRAND),
                 new Glyph(0XEF04, "Grappling Hook", Colors.STRAND),
-                new Glyph(0XEF0E, "Strand Kill", Colors.STRAND),
                 new Glyph(0XEF05, "Grapple Melee", Colors.STRAND)
-            ],
-            [
-
             ]
         ],
         "Berserker": [
