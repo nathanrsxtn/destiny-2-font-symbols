@@ -181,11 +181,12 @@
         ],
         "Behemoth": [
             [
-                new Glyph(0XE086, "Glacial Quake", Colors.STASIS),
-                new Glyph(0XE092, "Diamond Lance", Colors.STASIS)
+                new Glyph(0XE083, "Glacial Quake", Colors.STASIS)
             ],
             [
-                new Glyph(0XE083, "Shiver Strike", Colors.STASIS)
+                
+                new Glyph(0XE086, "Shiver Strike", Colors.STASIS),
+                new Glyph(0XE092, "Diamond Lance", Colors.STASIS)
             ]
         ],
         "Revenant": [
