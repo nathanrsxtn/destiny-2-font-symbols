@@ -226,7 +226,8 @@
             ],
             [
                 new Glyph(0XEF07, "Frenzied Blade", Colors.STRAND),
-                new Glyph(0XEF0A, "Drengr's Lash", Colors.STRAND)
+                new Glyph(0XEF0A, "Drengr's Lash", Colors.STRAND),
+                new Glyph(0XEF2E, "Flechette Storm", Colors.STRAND)
             ]
         ],
         "Threadrunner": [
@@ -235,7 +236,8 @@
             ],
             [
                 new Glyph(0XEF06, "Threaded Spike", Colors.STRAND),
-                new Glyph(0XEF09, "Ensnaring Slam", Colors.STRAND)
+                new Glyph(0XEF09, "Ensnaring Slam", Colors.STRAND),
+                new Glyph(0XEF2D, "Threaded Specter", Colors.STRAND)
             ]
         ],
         "Broodweaver": [
@@ -243,7 +245,8 @@
                 new Glyph(0XEF0D, "Needlestorm", Colors.STRAND)
             ],
             [
-                new Glyph(0XEF08, "Arcane Needle", Colors.STRAND)
+                new Glyph(0XEF08, "Arcane Needle", Colors.STRAND),
+                new Glyph(0XEF2C, "The Wanderer", Colors.STRAND)
             ]
         ],
         "Primary": [
@@ -335,7 +338,8 @@
                 new Glyph(0XE052, "Light", Colors.EXPERIENCE),
                 new Glyph(0XE059, "Settings"),
                 new Glyph(0XE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
-                new Glyph(0XE148, "Cabal Gold", Colors.LEGENDARY_LABEL)
+                new Glyph(0XE148, "Cabal Gold", Colors.LEGENDARY_LABEL),
+                new Glyph(0XEF2F, "Region Chest")
             ]
         ],
         "Playstation": [
