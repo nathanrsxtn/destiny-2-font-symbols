@@ -237,7 +237,8 @@
             [
                 new Glyph(0XEF06, "Threaded Spike", Colors.STRAND),
                 new Glyph(0XEF09, "Ensnaring Slam", Colors.STRAND),
-                new Glyph(0XEF2D, "Threaded Specter", Colors.STRAND)
+                new Glyph(0XEF2D, "Threaded Specter", Colors.STRAND),
+                new Glyph(0XEF30, "Whirling Maelstrom", Colors.STRAND)
             ]
         ],
         "Broodweaver": [
