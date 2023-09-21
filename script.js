@@ -455,7 +455,7 @@
                 new Glyph(0XEEF9, "Mouse Wheel Down Button", Colors.MOUSE_BG)
             ]
         ],
-        "Old Playstartion": [
+        "Old Playstation": [
             [
                 new Glyph(0XE000, "Playstation Cross Button", Colors.PS_BUTTON, new Glyph(0XE020, null, Colors.PS_CROSS)),
                 new Glyph(0XE001, "Playstation Circle Button", Colors.PS_BUTTON, new Glyph(0XE020, null, Colors.PS_CIRCLE)),
