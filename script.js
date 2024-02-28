@@ -338,8 +338,13 @@
                 new Glyph(0XE079, "Stasis: Glyph 3", Colors.STASIS)
             ]
         ],
-        "Activities": [
+        "Other": [
             [
+                new Glyph(0XE052, "Light", Colors.EXPERIENCE),
+                new Glyph(0XE059, "Settings"),
+                new Glyph(0XE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
+                new Glyph(0XE148, "Cabal Gold", Colors.LEGENDARY_LABEL),
+                new Glyph(0XEF2F, "Region Chest"),
                 new Glyph(0XE053, "Small Blocker"),
                 new Glyph(0XE054, "Medium Blocker"),
                 new Glyph(0XE055, "Large Blocker"),
@@ -350,16 +355,7 @@
                 new Glyph(0XE146, "Revive Token", Colors.EXOTIC_LABEL)
             ]
         ],
-        "Other": [
-            [
-                new Glyph(0XE052, "Light", Colors.EXPERIENCE),
-                new Glyph(0XE059, "Settings"),
-                new Glyph(0XE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
-                new Glyph(0XE148, "Cabal Gold", Colors.LEGENDARY_LABEL),
-                new Glyph(0XEF2F, "Region Chest")
-            ]
-        ],
-        "Emoji": [
+        "Emojis": [
             [
                 new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL),
                 new Glyph(0XEF26, "Emoji Hands Waving Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL))
@@ -382,7 +378,7 @@
                 new Glyph(0XEF24, "Emoji Symbols Flower Leaves", Colors.EMOJI_LEAF, new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE))
             ]
         ],
-        "Face": [
+        "Faces": [
             [
                 new Glyph(0XEF13, "Emoji Shocked Inner Eyes", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF14, "Emoji Shocked Outer Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
