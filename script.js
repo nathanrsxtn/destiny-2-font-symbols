@@ -1,5 +1,9 @@
 (async function () {
-    const Font = await opentype.load("fonts/Destiny_Keys.otf");
+    const Fonts = [
+        await opentype.load("fonts/destiny_symbols_common.otf"),
+        await opentype.load("fonts/destiny_symbols_pc.otf"),
+        await opentype.load("fonts/destiny_symbols_ps4.otf")
+    ];
     const Colors = Object.freeze({
         VOID: "#b283cc",
         SOLAR: "#f16f27",
@@ -46,10 +50,13 @@
             this.name = name;
             this.color = color;
             this[background instanceof Glyph ? "backgroundGlyph" : "backgroundColor"] = background;
-            let glyph;
-            if (glyph = Font.charToGlyph(String.fromCharCode(unicode))) {
-                this.glyphName = glyph.name;
-                this.glyphWidth = glyph.advanceWidth;
+            for (const font of Fonts) {
+                const glyph = font.charToGlyph(String.fromCharCode(unicode));
+                if (glyph?.path.commands.length) {
+                    this.glyphName = glyph.name;
+                    this.glyphWidth = glyph.advanceWidth;
+                    break;
+                }
             }
             Glyph.unicodes.push(unicode);
         }
@@ -184,7 +191,6 @@
                 new Glyph(0XE083, "Glacial Quake", Colors.STASIS)
             ],
             [
-                
                 new Glyph(0XE086, "Shiver Strike", Colors.STASIS),
                 new Glyph(0XE092, "Diamond Lance", Colors.STASIS)
             ]
@@ -341,6 +347,39 @@
                 new Glyph(0XE147, "Gilded", Colors.GILDED_FG, Colors.GILDED_BG),
                 new Glyph(0XE148, "Cabal Gold", Colors.LEGENDARY_LABEL),
                 new Glyph(0XEF2F, "Region Chest")
+            ]
+        ],
+        "Emoji": [
+            [
+                new Glyph(0XEF13, "emoji_shocked_inner_eyes"),
+                new Glyph(0XEF14, "emoji_shocked_outer_eyes"),
+                new Glyph(0XEF15, "emoji_smile_mouth"),
+                new Glyph(0XEF19, "emoji_tongue_mouth"),
+                new Glyph(0XEF10, "emoji_dotted_eyes"),
+                new Glyph(0XEF1B, "emoji_grimacingteeth_mouth"),
+                new Glyph(0XEF25, "emoji_hands_waving"),
+                new Glyph(0XEF1C, "emoji_shocked_mouth"),
+                new Glyph(0XEF2B, "emoji_hands_flexing_details"),
+                new Glyph(0XEF21, "emoji_symbols_heart"),
+                new Glyph(0XEF22, "emoji_symbols_flowerpetals"),
+                new Glyph(0XEF23, "emoji_symbols_flowercenter"),
+                new Glyph(0XEF24, "emoji_symbols_flowerleaves"),
+                new Glyph(0XEF26, "emoji_hands_waving_detail"),
+                new Glyph(0XEF27, "emoji_hands_clapping"),
+                new Glyph(0XEF28, "emoji_hands_clapping_otherhand"),
+                new Glyph(0XEF29, "emoji_hands_clapping_details"),
+                new Glyph(0XEF2A, "emoji_hands_flexing"),
+                new Glyph(0XEF1D, "emoji_traits_freezing"),
+                new Glyph(0XEF1E, "emoji_traits_loving"),
+                new Glyph(0XEF1F, "emoji_traits_crying"),
+                new Glyph(0XEF0F, "emoji_standard_background"),
+                new Glyph(0XEF20, "emoji_traits_blushing"),
+                new Glyph(0XEF18, "emoji_lowerrteeth_mouth"),
+                new Glyph(0XEF11, "emoji_curled_eyes"),
+                new Glyph(0XEF12, "emoji_linear_eyes"),
+                new Glyph(0XEF16, "emoji_excited_mouth"),
+                new Glyph(0XEF17, "emoji_upperteeth_mouth"),
+                new Glyph(0XEF1A, "emoji_grimacing_mouth")
             ]
         ],
         "Playstation": [
@@ -707,7 +746,7 @@
         ]
     };
 
-    const missingCharacters = Object.values(Font.glyphs.glyphs).filter(glyph => glyph.unicode && !Glyph.unicodes.includes(glyph.unicode)).map(glyph => new Glyph(glyph.unicode, glyph.name));
+    const missingCharacters = Fonts.flatMap(font => Object.values(font.glyphs.glyphs)).filter(glyph => glyph.unicode && !Glyph.unicodes.includes(glyph.unicode)).map(glyph => new Glyph(glyph.unicode, glyph.name));
     if (missingCharacters.length) FontGlyphs["Unknown"] = [missingCharacters];
     const symbolBox = document.querySelector("#symbolBox");
     document.onselectstart = event => event.target === symbolBox;

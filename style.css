@@ -1,6 +1,16 @@
 @font-face {
-    font-family: Destiny_Keys;
-    src: url(fonts/Destiny_Keys.otf);
+    font-family: "Destiny Symbols Common";
+    src: url(fonts/destiny_symbols_common.otf);
+}
+
+@font-face {
+    font-family: "Destiny Symbols PC";
+    src: url(fonts/destiny_symbols_pc.otf);
+}
+
+@font-face {
+    font-family: "Destiny Symbols PS4";
+    src: url(fonts/destiny_symbols_ps4.otf);
 }
 
 :root {
@@ -11,7 +21,7 @@ body {
     margin: 0.25rem;
     background-color: rgb(18, 23, 28);
     text-transform: uppercase;
-    font-family: Arial, Destiny_Keys;
+    font-family: sans-serif, "Destiny Symbols Common", "Destiny Symbols PC", "Destiny Symbols";
 }
 
 header {
@@ -143,7 +153,7 @@ header input {
     line-height: 2rem;
     color: #f5f5f5;
     caret-color: #b78c25;
-    font-family: Arial, Destiny_Keys;
+    font-family: sans-serif, "Destiny Symbols Common", "Destiny Symbols PC", "Destiny Symbols";
     font-size: 1.5rem;
 }
 
@@ -167,7 +177,7 @@ button {
     padding: 12px 24px;
     line-height: 1.5rem;
     color: #f5f5f5;
-    font-family: Arial, Destiny_Keys;
+    font-family: sans-serif, "Destiny Symbols Common", "Destiny Symbols PC", "Destiny Symbols";
     font-size: .925rem;
     font-weight: 500;
 }
