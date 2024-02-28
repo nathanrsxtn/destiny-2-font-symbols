@@ -5,13 +5,13 @@
         await opentype.load("fonts/destiny_symbols_ps4.otf")
     ];
     const Colors = Object.freeze({
-        VOID: "#b283cc",
-        SOLAR: "#f16f27",
-        ARC: "#7aecf3",
-        STASIS: "#4d87ff",
-        STRAND: "#35e366",
-        EXPERIENCE: "#00e4de",
-        MOD_BG: "#2a7275",
+        VOID: "#B283CC",
+        SOLAR: "#F16F27",
+        ARC: "#7AECF3",
+        STASIS: "#4D87FF",
+        STRAND: "#35E366",
+        EXPERIENCE: "#00E4DE",
+        MOD_BG: "#2A7275",
 
         QUEST: "#1A2044",
         PS_CONTROL: "#E6E6E6",
@@ -34,12 +34,22 @@
         MOUSE_BG: "#3396DA",
         PRIMARY: "#FFFFFF",
         SPECIAL: "#7AF48B",
-        HEAVY: "#b286ff",
+        HEAVY: "#B286FF",
         EXOTIC_LABEL: "#B09C4F",
         LEGENDARY_LABEL: "#644D71",
         MOD_FG: "#0AF3F3",
         GILDED_FG: "#F3E8B0",
-        GILDED_BG: "#EDB15E99"
+        GILDED_BG: "#EDB15E99",
+
+        EMOJI_SKIN_FILL: "#FFBE3F",
+        EMOJI_SKIN_STROKE: "#C28B1F",
+        EMOJI_MOUTH_FILL: "#171717",
+        EMOJI_MOUTH_STROKE: "#3B311D",
+        EMOJI_BLOOD: "#FF6895",
+        EMOJI_WATER: "#40C4FF",
+        EMOJI_HEART: "#F23131",
+        EMOJI_LEAF: "#53DC71",
+        EMOJI_WHITE: "#FFFFFF",
     });
 
     class Glyph {
@@ -351,35 +361,53 @@
         ],
         "Emoji": [
             [
-                new Glyph(0XEF13, "emoji_shocked_inner_eyes"),
-                new Glyph(0XEF14, "emoji_shocked_outer_eyes"),
-                new Glyph(0XEF15, "emoji_smile_mouth"),
-                new Glyph(0XEF19, "emoji_tongue_mouth"),
-                new Glyph(0XEF10, "emoji_dotted_eyes"),
-                new Glyph(0XEF1B, "emoji_grimacingteeth_mouth"),
-                new Glyph(0XEF25, "emoji_hands_waving"),
-                new Glyph(0XEF1C, "emoji_shocked_mouth"),
-                new Glyph(0XEF2B, "emoji_hands_flexing_details"),
-                new Glyph(0XEF21, "emoji_symbols_heart"),
-                new Glyph(0XEF22, "emoji_symbols_flowerpetals"),
-                new Glyph(0XEF23, "emoji_symbols_flowercenter"),
-                new Glyph(0XEF24, "emoji_symbols_flowerleaves"),
-                new Glyph(0XEF26, "emoji_hands_waving_detail"),
-                new Glyph(0XEF27, "emoji_hands_clapping"),
-                new Glyph(0XEF28, "emoji_hands_clapping_otherhand"),
-                new Glyph(0XEF29, "emoji_hands_clapping_details"),
-                new Glyph(0XEF2A, "emoji_hands_flexing"),
-                new Glyph(0XEF1D, "emoji_traits_freezing"),
-                new Glyph(0XEF1E, "emoji_traits_loving"),
-                new Glyph(0XEF1F, "emoji_traits_crying"),
-                new Glyph(0XEF0F, "emoji_standard_background"),
-                new Glyph(0XEF20, "emoji_traits_blushing"),
-                new Glyph(0XEF18, "emoji_lowerrteeth_mouth"),
-                new Glyph(0XEF11, "emoji_curled_eyes"),
-                new Glyph(0XEF12, "emoji_linear_eyes"),
-                new Glyph(0XEF16, "emoji_excited_mouth"),
-                new Glyph(0XEF17, "emoji_upperteeth_mouth"),
-                new Glyph(0XEF1A, "emoji_grimacing_mouth")
+                new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL),
+                new Glyph(0XEF26, "Emoji Hands Waving Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL))
+            ],
+            [
+                new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL),
+                new Glyph(0XEF28, "Emoji Hands Clapping Other Hand", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF29, "Emoji Hands Clapping Details", Colors.EMOJI_WHITE, new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL))
+            ],
+            [
+                new Glyph(0XEF2A, "Emoji Hands Flexing", Colors.EMOJI_SKIN_FILL),
+                new Glyph(0XEF2B, "Emoji Hands Flexing Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF2A, "Emoji Hands Flexing", Colors.EMOJI_SKIN_FILL))
+            ],
+            [
+                new Glyph(0XEF21, "Emoji Symbols Heart", Colors.EMOJI_HEART)
+            ],
+            [
+                new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE),
+                new Glyph(0XEF23, "Emoji Symbols Flower Center", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE)),
+                new Glyph(0XEF24, "Emoji Symbols Flower Leaves", Colors.EMOJI_LEAF, new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE))
+            ]
+        ],
+        "Face": [
+            [
+                new Glyph(0XEF13, "Emoji Shocked Inner Eyes", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF14, "Emoji Shocked Outer Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF10, "Emoji Dotted Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF11, "Emoji Curled Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF12, "Emoji Linear Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL))
+            ],
+            [
+                new Glyph(0XEF15, "Emoji Smile Mouth", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF19, "Emoji Tongue Mouth", Colors.EMOJI_BLOOD, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF1C, "Emoji Shocked Mouth", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF16, "Emoji Excited Mouth", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF1A, "Emoji Grimacing Mouth", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF1B, "Emoji Grimacing Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF18, "Emoji Lower Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF17, "Emoji Upper Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL))
+            ],
+            [
+                new Glyph(0XEF1D, "Emoji Traits Freezing", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF1E, "Emoji Traits Loving", Colors.EMOJI_HEART, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF1F, "Emoji Traits Crying", Colors.EMOJI_WATER, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
+                new Glyph(0XEF20, "Emoji Traits Blushing", Colors.EMOJI_BLOOD, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL))
+            ],
+            [
+                new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)
             ]
         ],
         "Playstation": [
@@ -774,9 +802,10 @@
                     tooltipUnicodeLine += ` (U+${glyph.backgroundGlyph.unicode} Background)`;
                     element.setAttribute("background-glyph", glyph.backgroundGlyph.glyph);
                     element.style.setProperty("--background-color", glyph.backgroundGlyph.color);
-                } else element.style.setProperty("--background-color", glyph.backgroundColor);
+                } else if (glyph.backgroundColor) element.style.setProperty("--background-color", glyph.backgroundColor);
                 element.title = `${glyph.name} (${glyph.glyphName})\n${tooltipUnicodeLine}\nClick to Copy`;
                 element.style.setProperty("--color", glyph.color);
+                if (glyph.color && (glyph.color.substring(1, 3) > "7F" || glyph.color.substring(3, 5) > "7F" || glyph.color.substring(5, 7) > "7F")) element.style.setProperty("--safe-color", glyph.color);
                 if (glyph.glyphWidth <= 0) element.setAttribute("zero-width", "");
                 return element;
             }));
