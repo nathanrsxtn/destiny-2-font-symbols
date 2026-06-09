@@ -1,8 +1,9 @@
 (async function () {
+    const LATEST_VERSION = "9.7.0"
     const Fonts = [
         await opentype.load("fonts/destiny_symbols_common.otf"),
         await opentype.load("fonts/destiny_symbols_pc.otf"),
-        await opentype.load("fonts/destiny_symbols_ps4.otf")
+        await opentype.load("fonts/destiny_symbols_ps4.otf"),
     ];
     const Colors = Object.freeze({
         VOID: "#B283CC",
@@ -10,6 +11,7 @@
         ARC: "#7AECF3",
         STASIS: "#4D87FF",
         STRAND: "#35E366",
+        PRISMATIC: "#B66C9A",
         EXPERIENCE: "#00E4DE",
         MOD_BG: "#2A7275",
 
@@ -70,44 +72,53 @@
             }
             Glyph.unicodes.push(unicode);
         }
+        setVersion(version) {
+            this.version = version;
+            return this;
+        }
     }
 
     const FontGlyphs = {
         "Void": [
             [
-                new Glyph(0XE144, "Void", Colors.VOID)
+                new Glyph(0XE144, "Void", Colors.VOID),
             ],
             [
-                new Glyph(0XE094, "Controlled Demolition", Colors.VOID)
+                new Glyph(0XE094, "Controlled Demolition", Colors.VOID),
             ]
         ],
         "Sentinel": [
             [
                 new Glyph(0XE061, "Banner Shield", Colors.VOID),
-                new Glyph(0XE128, "Sentinel Shield", Colors.VOID)
+                new Glyph(0XE128, "Sentinel Shield", Colors.VOID),
+                new Glyph(0xEF36, "Twilight Arsenal", Colors.VOID).setVersion("9.5.0"),
             ],
             [
-                new Glyph(0XE095, "Shield Throw", Colors.VOID)
+                new Glyph(0XE095, "Shield Throw", Colors.VOID),
+                new Glyph(0xEF37, "Twilight Arsenal Relic", Colors.VOID).setVersion("9.5.0"),
+                new Glyph(0xEF38, "Unbreakable", Colors.VOID).setVersion("9.5.0"),
             ]
         ],
         "Nightstalker": [
             [
                 new Glyph(0XE057, "Spectral Blades", Colors.VOID),
-                new Glyph(0XE127, "Shadowshot", Colors.VOID)
+                new Glyph(0XE127, "Shadowshot", Colors.VOID),
             ],
             [
                 new Glyph(0XE112, "Smoke", Colors.VOID),
-                new Glyph(0XE097, "Quickfall", Colors.VOID)
+                new Glyph(0XE097, "Quickfall", Colors.VOID),
+                new Glyph(0xEF50, "Phantom Surge", Colors.VOID).setVersion("9.7.0"),
             ]
         ],
         "Voidwalker": [
             [
                 new Glyph(0XE064, "Nova Warp", Colors.VOID),
-                new Glyph(0XE120, "Nova Bomb", Colors.VOID)
+                new Glyph(0XE120, "Nova Bomb", Colors.VOID),
             ],
             [
                 new Glyph(0XE093, "Child of the Old Gods", Colors.VOID),
-                new Glyph(0XE096, "Pocket Singularity", Colors.VOID)
+                new Glyph(0XE096, "Pocket Singularity", Colors.VOID),
+                new Glyph(0xEF49, "Soul Siphon", Colors.VOID).setVersion("9.7.0"),
             ]
         ],
         "Solar": [
@@ -120,111 +131,117 @@
         "Sunbreaker": [
             [
                 new Glyph(0XE060, "Burning Maul", Colors.SOLAR),
-                new Glyph(0XE126, "Hammer of Sol", Colors.SOLAR)
+                new Glyph(0XE126, "Hammer of Sol", Colors.SOLAR),
             ],
             [
                 new Glyph(0XE067, "Throwing Hammer", Colors.SOLAR),
-                new Glyph(0XE114, "Consecration", Colors.SOLAR)
+                new Glyph(0XE114, "Consecration", Colors.SOLAR),
+                new Glyph(0xEF48, "Shieldburst", Colors.SOLAR).setVersion("9.7.0"),
             ]
         ],
         "Gunslinger": [
             [
                 new Glyph(0XE062, "Blade Barrage", Colors.SOLAR),
-                new Glyph(0XE123, "Golden Gun", Colors.SOLAR)
+                new Glyph(0XE123, "Golden Gun", Colors.SOLAR),
             ],
             [
                 new Glyph(0XE124, "Throwing Knife", Colors.SOLAR),
-                new Glyph(0XE115, "Gunpowder Gamble", Colors.SOLAR)
+                new Glyph(0XE115, "Gunpowder Gamble", Colors.SOLAR),
+                new Glyph(0xEF51, "Crackshot", Colors.SOLAR).setVersion("9.7.0"),
             ]
         ],
         "Dawnblade": [
             [
                 new Glyph(0XE056, "Well of Radiance", Colors.SOLAR),
-                new Glyph(0XE119, "Daybreak", Colors.SOLAR)
+                new Glyph(0XE119, "Daybreak", Colors.SOLAR),
+                new Glyph(0xEF35, "Song of Flame", Colors.SOLAR).setVersion("9.5.0"),
             ],
             [
-                new Glyph(0XE116, "Incinerator Snap", Colors.SOLAR)
+                new Glyph(0XE116, "Incinerator Snap", Colors.SOLAR),
+                new Glyph(0xEF34, "Helion", Colors.SOLAR).setVersion("9.5.0"),
             ]
         ],
         "Arc": [
             [
-                new Glyph(0XE143, "Arc", Colors.ARC)
+                new Glyph(0XE143, "Arc", Colors.ARC),
             ],
             [
-                new Glyph(0XEEFE, "Arc Jolt", Colors.ARC)
+                new Glyph(0XEEFE, "Arc Jolt", Colors.ARC),
             ]
         ],
         "Striker": [
             [
                 new Glyph(0XE058, "Thundercrash", Colors.ARC),
-                new Glyph(0XE122, "Fists of Havoc", Colors.ARC)
+                new Glyph(0XE122, "Fists of Havoc", Colors.ARC),
             ],
             [
-                new Glyph(0XEEFB, "Thunderclap", Colors.ARC)
+                new Glyph(0XEEFB, "Thunderclap", Colors.ARC),
             ]
         ],
         "Arcstrider": [
             [
                 new Glyph(0XE063, "Whirlwind Guard", Colors.ARC),
                 new Glyph(0XE121, "Arc Staff", Colors.ARC),
-                new Glyph(0XEEFD, "Gathering Storm", Colors.ARC)
+                new Glyph(0XEEFD, "Gathering Storm", Colors.ARC),
+                new Glyph(0xEF33, "Storm's Edge", Colors.ARC).setVersion("9.5.0"),
             ],
             [
-
+                new Glyph(0xEF32, "Ascension", Colors.ARC).setVersion("9.5.0"),
             ]
         ],
         "Stormcaller": [
             [
                 new Glyph(0XE065, "Chaos Reach", Colors.ARC),
-                new Glyph(0XE125, "Stormtrance", Colors.ARC)
+                new Glyph(0XE125, "Stormtrance", Colors.ARC),
             ],
             [
                 new Glyph(0XE118, "Arc Soul", Colors.ARC),
-                new Glyph(0XEEFC, "Lightning Surge", Colors.ARC)
+                new Glyph(0XEEFC, "Lightning Surge", Colors.ARC),
             ]
         ],
 
         "Stasis": [
             [
-                new Glyph(0XE139, "Stasis", Colors.STASIS)
+                new Glyph(0XE139, "Stasis", Colors.STASIS),
             ],
             [
                 new Glyph(0XE080, "Coldsnap Grenade", Colors.STASIS),
                 new Glyph(0XE081, "Duskfield Grenade", Colors.STASIS),
                 new Glyph(0XE082, "Glacier Grenade", Colors.STASIS),
                 new Glyph(0XE089, "Encasement Shatter", Colors.STASIS),
-                new Glyph(0XE090, "Crystal Shatter", Colors.STASIS)
+                new Glyph(0XE090, "Crystal Shatter", Colors.STASIS),
+                new Glyph(0xEF52, "Shatter Grenade", Colors.STASIS).setVersion("9.7.0"),
             ]
         ],
         "Behemoth": [
             [
-                new Glyph(0XE083, "Glacial Quake", Colors.STASIS)
+                new Glyph(0XE083, "Glacial Quake", Colors.STASIS),
             ],
             [
                 new Glyph(0XE086, "Shiver Strike", Colors.STASIS),
-                new Glyph(0XE092, "Diamond Lance", Colors.STASIS)
+                new Glyph(0XE092, "Diamond Lance", Colors.STASIS),
             ]
         ],
         "Revenant": [
             [
-                new Glyph(0XE084, "Silence and Squall", Colors.STASIS)
+                new Glyph(0XE084, "Silence and Squall", Colors.STASIS),
             ],
             [
-                new Glyph(0XE087, "Withering Blade", Colors.STASIS)
+                new Glyph(0XE087, "Withering Blade", Colors.STASIS),
             ]
         ],
         "Shadebinder": [
             [
-                new Glyph(0XE085, "Winter's Wrath", Colors.STASIS)
+                new Glyph(0XE085, "Winter's Wrath", Colors.STASIS),
             ],
             [
                 new Glyph(0XE091, "Bleak Watcher", Colors.STASIS),
-                new Glyph(0XE088, "Penumbral Blast", Colors.STASIS)
+                new Glyph(0XE088, "Penumbral Blast", Colors.STASIS),
             ]
         ],
         "Strand": [
             [
-                new Glyph(0XEF0E, "Strand Kill", Colors.STRAND)
+                new Glyph(0XEF0E, "Strand", Colors.STRAND),
             ],
             [
                 new Glyph(0XEEFF, "Threadling", Colors.STRAND),
@@ -232,38 +249,69 @@
                 new Glyph(0XEF01, "Tangle", Colors.STRAND),
                 new Glyph(0XEF02, "Suspend Grenade", Colors.STRAND),
                 new Glyph(0XEF03, "Threadling Grenade", Colors.STRAND),
+                new Glyph(0xEF53, "Slicewire Grenade", Colors.STRAND).setVersion("9.7.0"),
                 new Glyph(0XEF04, "Grappling Hook", Colors.STRAND),
-                new Glyph(0XEF05, "Grapple Melee", Colors.STRAND)
+                new Glyph(0XEF05, "Grapple Melee", Colors.STRAND),
             ]
         ],
         "Berserker": [
             [
-                new Glyph(0XEF0C, "Bladefury", Colors.STRAND)
+                new Glyph(0XEF0C, "Bladefury", Colors.STRAND),
             ],
             [
                 new Glyph(0XEF07, "Frenzied Blade", Colors.STRAND),
                 new Glyph(0XEF0A, "Drengr's Lash", Colors.STRAND),
-                new Glyph(0XEF2E, "Flechette Storm", Colors.STRAND)
+                new Glyph(0XEF2E, "Flechette Storm", Colors.STRAND),
             ]
         ],
         "Threadrunner": [
             [
-                new Glyph(0XEF0B, "Silkstrike", Colors.STRAND)
+                new Glyph(0XEF0B, "Silkstrike", Colors.STRAND),
             ],
             [
                 new Glyph(0XEF06, "Threaded Spike", Colors.STRAND),
                 new Glyph(0XEF09, "Ensnaring Slam", Colors.STRAND),
                 new Glyph(0XEF2D, "Threaded Specter", Colors.STRAND),
-                new Glyph(0XEF30, "Whirling Maelstrom", Colors.STRAND)
+                new Glyph(0XEF30, "Whirling Maelstrom", Colors.STRAND),
             ]
         ],
         "Broodweaver": [
             [
-                new Glyph(0XEF0D, "Needlestorm", Colors.STRAND)
+                new Glyph(0XEF0D, "Needlestorm", Colors.STRAND),
             ],
             [
                 new Glyph(0XEF08, "Arcane Needle", Colors.STRAND),
-                new Glyph(0XEF2C, "The Wanderer", Colors.STRAND)
+                new Glyph(0XEF2C, "The Wanderer", Colors.STRAND),
+            ]
+        ],
+        "Prismatic": [
+            [
+                new Glyph(0xEF47, "Prismatic", Colors.PRISMATIC).setVersion("9.7.0"),
+            ],
+            [
+                new Glyph(0xEF3C, "Light Ability", Colors.PRISMATIC).setVersion("9.5.0"),
+                new Glyph(0xEF3D, "Dark Ability", Colors.PRISMATIC).setVersion("9.5.0"),
+            ]
+        ],
+        "Prismatic Titan": [
+            [
+            ],
+            [
+                new Glyph(0xEF39, "Prismatic Titan Grenade", Colors.PRISMATIC).setVersion("9.5.0"),
+            ]
+        ],
+        "Prismatic Hunter": [
+            [
+            ],
+            [
+                new Glyph(0xEF3A, "Prismatic Hunter Grenade", Colors.PRISMATIC).setVersion("9.5.0"),
+            ]
+        ],
+        "Prismatic Warlock": [
+            [
+            ],
+            [
+                new Glyph(0xEF3B, "Prismatic Warlock Grenade", Colors.PRISMATIC).setVersion("9.5.0"),
             ]
         ],
         "Primary": [
@@ -274,7 +322,7 @@
                 new Glyph(0XE102, "Scout Rifle", Colors.PRIMARY),
                 new Glyph(0XE103, "Hand Cannon", Colors.PRIMARY),
                 new Glyph(0XE107, "Submachine Gun", Colors.PRIMARY),
-                new Glyph(0XE109, "Sidearm", Colors.PRIMARY)
+                new Glyph(0XE109, "Sidearm", Colors.PRIMARY),
             ]
         ],
         "Special": [
@@ -283,7 +331,7 @@
                 new Glyph(0XE105, "Sniper Rifle", Colors.SPECIAL),
                 new Glyph(0XE106, "Fusion Rifle", Colors.SPECIAL),
                 new Glyph(0XE155, "Light Grenade Launcher", Colors.SPECIAL),
-                new Glyph(0XE156, "Glaive", Colors.SPECIAL)
+                new Glyph(0XE156, "Glaive", Colors.SPECIAL),
             ]
         ],
         "Heavy": [
@@ -292,7 +340,8 @@
                 new Glyph(0XE113, "Heavy Grenade Launcher", Colors.HEAVY),
                 new Glyph(0XE152, "Linear Fusion Rifle", Colors.HEAVY),
                 new Glyph(0XE153, "Sword", Colors.HEAVY),
-                new Glyph(0XE154, "Machine Gun", Colors.HEAVY)
+                new Glyph(0XE154, "Machine Gun", Colors.HEAVY),
+                new Glyph(0xEF45, "Crossbow", Colors.HEAVY).setVersion("9.5.0"),
             ]
         ],
         "Unique": [
@@ -301,17 +350,18 @@
                 new Glyph(0XE136, "Scorch Cannon", Colors.EXOTIC_LABEL),
                 new Glyph(0XE138, "Trace Rifle", Colors.EXOTIC_LABEL),
                 new Glyph(0XE150, "Skyburner's Oath", Colors.EXOTIC_LABEL),
-                new Glyph(0XE151, "Lord of Wolves", Colors.EXOTIC_LABEL)
+                new Glyph(0XE151, "Lord of Wolves", Colors.EXOTIC_LABEL),
+                new Glyph(0xEF31, "Exodus Rockets", Colors.EXOTIC_LABEL).setVersion("9.5.0"),
             ]
         ],
         "Attacks": [
             [
-                new Glyph(0XE142, "Headshot")
+                new Glyph(0XE142, "Headshot"),
             ],
             [
                 new Glyph(0XE110, "Melee"),
                 new Glyph(0XE111, "Grenade"),
-                new Glyph(0XE141, "Environment Hazard / Misadventure")
+                new Glyph(0XE141, "Environment Hazard / Misadventure"),
             ]
         ],
         "Vehicles": [
@@ -322,20 +372,21 @@
                 new Glyph(0XE133, "Sparrow"),
                 new Glyph(0XE134, "Shield Artifact"),
                 new Glyph(0XE135, "Loader Tank"),
-                new Glyph(0XE137, "Drake")
+                new Glyph(0XE137, "Drake"),
+                new Glyph(0xEF44, "Brig").setVersion("9.5.0"),
             ]
         ],
         "Mods / Seals": [
             [
                 new Glyph(0XE070, "Shield-Piercing (Barrier)", Colors.MOD_FG, Colors.MOD_BG),
                 new Glyph(0XE071, "Disruption (Overload)", Colors.MOD_FG, Colors.MOD_BG),
-                new Glyph(0XE072, "Stagger (Unstoppable)", Colors.MOD_FG, Colors.MOD_BG)
+                new Glyph(0XE072, "Stagger (Unstoppable)", Colors.MOD_FG, Colors.MOD_BG),
             ],
             [
                 new Glyph(0XE076, "Stasis: Glyph 0", Colors.STASIS),
                 new Glyph(0XE077, "Stasis: Glyph 1", Colors.STASIS),
                 new Glyph(0XE078, "Stasis: Glyph 2", Colors.STASIS),
-                new Glyph(0XE079, "Stasis: Glyph 3", Colors.STASIS)
+                new Glyph(0XE079, "Stasis: Glyph 3", Colors.STASIS),
             ]
         ],
         "Other": [
@@ -352,30 +403,37 @@
                 new Glyph(0XE069, "Invasion"),
                 new Glyph(0XE075, "Quest", null, Colors.QUEST),
                 new Glyph(0XE145, "Lost Sector", null, Colors.QUEST),
-                new Glyph(0XE146, "Revive Token", Colors.EXOTIC_LABEL)
+                new Glyph(0XE146, "Revive Token", Colors.EXOTIC_LABEL),
+                new Glyph(0xEF3E, "Roster").setVersion("9.5.0"),
+                new Glyph(0xEF3F, "Timer").setVersion("9.5.0"),
+                new Glyph(0xEF40, "Matterspark").setVersion("9.5.0"),
+                new Glyph(0xEF41, "Translator").setVersion("9.5.0"),
+                new Glyph(0xEF42, "Relocator").setVersion("9.5.0"),
+                new Glyph(0xEF43, "Bender").setVersion("9.5.0"),
+                new Glyph(0xEF46, "Bonus Drop Engram").setVersion("9.5.0"),
             ]
         ],
         "Emojis": [
             [
                 new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL),
-                new Glyph(0XEF26, "Emoji Hands Waving Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL))
+                new Glyph(0XEF26, "Emoji Hands Waving Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF25, "Emoji Hands Waving", Colors.EMOJI_SKIN_FILL)),
             ],
             [
                 new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL),
                 new Glyph(0XEF28, "Emoji Hands Clapping Other Hand", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL)),
-                new Glyph(0XEF29, "Emoji Hands Clapping Details", Colors.EMOJI_WHITE, new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL))
+                new Glyph(0XEF29, "Emoji Hands Clapping Details", Colors.EMOJI_WHITE, new Glyph(0XEF27, "Emoji Hands Clapping", Colors.EMOJI_SKIN_FILL)),
             ],
             [
                 new Glyph(0XEF2A, "Emoji Hands Flexing", Colors.EMOJI_SKIN_FILL),
-                new Glyph(0XEF2B, "Emoji Hands Flexing Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF2A, "Emoji Hands Flexing", Colors.EMOJI_SKIN_FILL))
+                new Glyph(0XEF2B, "Emoji Hands Flexing Details", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF2A, "Emoji Hands Flexing", Colors.EMOJI_SKIN_FILL)),
             ],
             [
-                new Glyph(0XEF21, "Emoji Symbols Heart", Colors.EMOJI_HEART)
+                new Glyph(0XEF21, "Emoji Symbols Heart", Colors.EMOJI_HEART),
             ],
             [
                 new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE),
                 new Glyph(0XEF23, "Emoji Symbols Flower Center", Colors.EMOJI_SKIN_STROKE, new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE)),
-                new Glyph(0XEF24, "Emoji Symbols Flower Leaves", Colors.EMOJI_LEAF, new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE))
+                new Glyph(0XEF24, "Emoji Symbols Flower Leaves", Colors.EMOJI_LEAF, new Glyph(0XEF22, "Emoji Symbols Flower Petals", Colors.EMOJI_WHITE)),
             ]
         ],
         "Faces": [
@@ -384,7 +442,7 @@
                 new Glyph(0XEF14, "Emoji Shocked Outer Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF10, "Emoji Dotted Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF11, "Emoji Curled Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
-                new Glyph(0XEF12, "Emoji Linear Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL))
+                new Glyph(0XEF12, "Emoji Linear Eyes", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
             ],
             [
                 new Glyph(0XEF15, "Emoji Smile Mouth", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
@@ -394,16 +452,16 @@
                 new Glyph(0XEF1A, "Emoji Grimacing Mouth", Colors.EMOJI_MOUTH_STROKE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF1B, "Emoji Grimacing Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF18, "Emoji Lower Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
-                new Glyph(0XEF17, "Emoji Upper Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL))
+                new Glyph(0XEF17, "Emoji Upper Teeth Mouth", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
             ],
             [
                 new Glyph(0XEF1D, "Emoji Traits Freezing", Colors.EMOJI_WHITE, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF1E, "Emoji Traits Loving", Colors.EMOJI_HEART, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
                 new Glyph(0XEF1F, "Emoji Traits Crying", Colors.EMOJI_WATER, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
-                new Glyph(0XEF20, "Emoji Traits Blushing", Colors.EMOJI_BLOOD, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL))
+                new Glyph(0XEF20, "Emoji Traits Blushing", Colors.EMOJI_BLOOD, new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)),
             ],
             [
-                new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL)
+                new Glyph(0XEF0F, "Emoji Standard Background", Colors.EMOJI_SKIN_FILL),
             ]
         ],
         "Playstation": [
@@ -429,11 +487,11 @@
                 new Glyph(0XE044, "Playstation Options", Colors.PS_CONTROL),
                 new Glyph(0XE047, "Playstation D-Pad All", Colors.PS_CONTROL),
                 new Glyph(0XE048, "Playstation D-Pad Left + Right", Colors.PS_CONTROL),
-                new Glyph(0XE049, "Playstation D-Pad Up + Down", Colors.PS_CONTROL)
+                new Glyph(0XE049, "Playstation D-Pad Up + Down", Colors.PS_CONTROL),
             ],
             [
                 new Glyph(0XE045, "Playstation Black Background", Colors.PS_CONTROL),
-                new Glyph(0XE046, "Playstation Touch Background", Colors.PS_CONTROL)
+                new Glyph(0XE046, "Playstation Touch Background", Colors.PS_CONTROL),
             ]
         ],
         "Xbox": [
@@ -460,11 +518,11 @@
                 new Glyph(0XE176, "Xbox D-Pad Left", Colors.XBOX_CONTROL),
                 new Glyph(0XE179, "Xbox Back Button", Colors.XBOX_CONTROL),
                 new Glyph(0XE180, "Xbox Start Button", Colors.XBOX_CONTROL),
-                new Glyph(0XE181, "Xbox Left Trigger", Colors.XBOX_CONTROL)
+                new Glyph(0XE181, "Xbox Left Trigger", Colors.XBOX_CONTROL),
             ],
             [
                 new Glyph(0XE177, "Xbox Black Background", Colors.XBOX_CONTROL),
-                new Glyph(0XE178, "Xbox Burger Background", Colors.XBOX_CONTROL)
+                new Glyph(0XE178, "Xbox Burger Background", Colors.XBOX_CONTROL),
             ]
         ],
         "Nintendo": [
@@ -489,13 +547,13 @@
                 new Glyph(0XE247, "Nintendo D-Pad Left", Colors.XBOX_CONTROL),
                 new Glyph(0XE252, "Nintendo D-Pad All", Colors.XBOX_CONTROL),
                 new Glyph(0XE253, "Nintendo D-Pad Left + Right", Colors.XBOX_CONTROL),
-                new Glyph(0XE254, "Nintendo D-Pad Up + Down", Colors.XBOX_CONTROL)
+                new Glyph(0XE254, "Nintendo D-Pad Up + Down", Colors.XBOX_CONTROL),
             ],
             [
                 new Glyph(0XE248, "Nintendo Share Button", Colors.XBOX_CONTROL),
                 new Glyph(0XE249, "Nintendo Options Button", Colors.XBOX_CONTROL),
                 new Glyph(0XE250, "Nintendo Black Background", Colors.XBOX_CONTROL),
-                new Glyph(0XE251, "Nintendo Touch Background", Colors.XBOX_CONTROL)
+                new Glyph(0XE251, "Nintendo Touch Background", Colors.XBOX_CONTROL),
             ]
         ],
         "Mouse": [
@@ -506,7 +564,7 @@
                 new Glyph(0XEED0, "Mouse 4", Colors.MOUSE_FG, new Glyph(0XEEF6, null, Colors.MOUSE_BG)),
                 new Glyph(0XEED1, "Mouse 5", Colors.MOUSE_FG, new Glyph(0XEEF7, null, Colors.MOUSE_BG)),
                 new Glyph(0XEED2, "Mouse Wheel Up", Colors.MOUSE_FG, new Glyph(0XEEF8, null, Colors.MOUSE_BG)),
-                new Glyph(0XEED3, "Mouse Wheel Down", Colors.MOUSE_FG, new Glyph(0XEEF9, null, Colors.MOUSE_BG))
+                new Glyph(0XEED3, "Mouse Wheel Down", Colors.MOUSE_FG, new Glyph(0XEEF9, null, Colors.MOUSE_BG)),
             ],
             [
                 new Glyph(0XEEF3, "Mouse Button 1", Colors.MOUSE_BG),
@@ -515,7 +573,7 @@
                 new Glyph(0XEEF6, "Mouse Button 4", Colors.MOUSE_BG),
                 new Glyph(0XEEF7, "Mouse Button 5", Colors.MOUSE_BG),
                 new Glyph(0XEEF8, "Mouse Wheel Up Button", Colors.MOUSE_BG),
-                new Glyph(0XEEF9, "Mouse Wheel Down Button", Colors.MOUSE_BG)
+                new Glyph(0XEEF9, "Mouse Wheel Down Button", Colors.MOUSE_BG),
             ]
         ],
         "Old Playstation": [
@@ -542,11 +600,11 @@
                 new Glyph(0XE019, "Playstation Options", Colors.PS_CONTROL),
                 new Glyph(0XE022, "Playstation D-Pad All", Colors.PS_CONTROL),
                 new Glyph(0XE023, "Playstation D-Pad Left + Right", Colors.PS_CONTROL),
-                new Glyph(0XE024, "Playstation D-Pad Up + Down", Colors.PS_CONTROL)
+                new Glyph(0XE024, "Playstation D-Pad Up + Down", Colors.PS_CONTROL),
             ],
             [
                 new Glyph(0XE020, "Playstation Black Background", Colors.PS_CONTROL),
-                new Glyph(0XE021, "Playstation Touch Background", Colors.PS_CONTROL)
+                new Glyph(0XE021, "Playstation Touch Background", Colors.PS_CONTROL),
             ]
         ],
         "Capital Keys": [
@@ -587,7 +645,7 @@
                 new Glyph(0XEE58, "Key Capital X", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEE59, "Key Capital Y", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEE5A, "Key Capital Z", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
-                new Glyph(0XEEDC, "Key Capital O with Diaeresis", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG))
+                new Glyph(0XEEDC, "Key Capital O with Diaeresis", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
             ]
         ],
         "Lowercase Keys": [
@@ -623,7 +681,7 @@
                 new Glyph(0XEE77, "Key Small w", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEE78, "Key Small x", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEE79, "Key Small y", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
-                new Glyph(0XEE7A, "Key Small z", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG))
+                new Glyph(0XEE7A, "Key Small z", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
             ]
         ],
         "Number Pad Keys": [
@@ -644,7 +702,7 @@
                 new Glyph(0XEEC9, "Key Numpad Subtract", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEECA, "Key Numpad Add", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEECB, "Key Numpad Enter", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
-                new Glyph(0XEECC, "Key Numpad Decimal", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG))
+                new Glyph(0XEECC, "Key Numpad Decimal", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
             ]
         ],
         "Symbol Keys": [
@@ -702,7 +760,7 @@
                 new Glyph(0XEE7C, "Key Vertical Bar", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEE7D, "Key Right Curly Bracket", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEE7E, "Key Tilde", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
-                new Glyph(0XEEA1, "Key Spacebar", Colors.KEY_FG, new Glyph(0XEEF1, null, Colors.KEY_BG))
+                new Glyph(0XEEA1, "Key Spacebar", Colors.KEY_FG, new Glyph(0XEEF1, null, Colors.KEY_BG)),
             ]
         ],
         "Control Keys": [
@@ -747,11 +805,11 @@
                 new Glyph(0XEEE3, "Key F10", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEEE4, "Key F11", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
                 new Glyph(0XEEE5, "Key F12", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
-                new Glyph(0XEEE6, "Key Bind", Colors.KEY_FG)
+                new Glyph(0XEEE6, "Key Bind", Colors.KEY_FG),
             ],
             [
                 new Glyph(0XEEF0, "Key Standard Background", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
-                new Glyph(0XEEF1, "Key Large Background", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG))
+                new Glyph(0XEEF1, "Key Large Background", Colors.KEY_FG, new Glyph(0XEEF0, null, Colors.KEY_BG)),
             ]
         ],
         "Special Characters": [
@@ -765,9 +823,9 @@
                 new Glyph(0XE051, "Capital Sharp S"),
                 new Glyph(0XEEA0, "No-Break Space"),
                 new Glyph(0XEEFA, "Tofu"),
-                new Glyph(0XFFFD, "Replacement Character")
+                new Glyph(0XFFFD, "Replacement Character"),
             ]
-        ]
+        ],
     };
 
     const missingCharacters = Fonts.flatMap(font => Object.values(font.glyphs.glyphs)).filter(glyph => glyph.unicode && !Glyph.unicodes.includes(glyph.unicode)).map(glyph => new Glyph(glyph.unicode, glyph.name));
@@ -803,6 +861,7 @@
                 element.style.setProperty("--color", glyph.color);
                 if (glyph.color && (glyph.color.substring(1, 3) > "7F" || glyph.color.substring(3, 5) > "7F" || glyph.color.substring(5, 7) > "7F")) element.style.setProperty("--safe-color", glyph.color);
                 if (glyph.glyphWidth <= 0) element.setAttribute("zero-width", "");
+                if (glyph.version == LATEST_VERSION) element.setAttribute("recent", "");
                 return element;
             }));
             return group;

@@ -21,7 +21,7 @@ body {
     margin: 0.25rem;
     background-color: rgb(18, 23, 28);
     text-transform: uppercase;
-    font-family: sans-serif, "Destiny Symbols Common", "Destiny Symbols PC", "Destiny Symbols";
+    font-family: Arial, sans-serif, "Destiny Symbols Common", "Destiny Symbols PC", "Destiny Symbols";
 }
 
 header {
@@ -32,7 +32,8 @@ header {
     margin: 1.5rem auto;
     border-radius: 0.25rem;
     box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .25);
-    background-color: rgba(245, 245, 245, 0.2);
+    background-color: #0d1215;
+    border: 1px solid #32404e;
     padding: 1rem;
     max-width: 50rem;
     text-align: center;
@@ -43,6 +44,14 @@ header h1 {
     margin-inline: 0rem;
     color: rgb(245, 245, 245);
     font-size: 2rem;
+}
+
+header span {
+    margin-block: 0rem 0.5rem;
+    margin-inline: 0rem;
+    color: rgb(245, 245, 245);
+    font-size: 1rem;
+    text-transform: none;
 }
 
 header a {
@@ -128,6 +137,15 @@ figure[background-glyph]:hover {
 figure[background-glyph]:hover::before {
     color: var(--background-color);
     content: attr(background-glyph);
+}
+
+
+figure[recent]::after {
+    position: absolute;
+    color: gold;
+    content: "★";
+    font-size: 10px;
+    line-height: 0px;
 }
 
 figure:hover::after {
